@@ -365,6 +365,7 @@ UsedLibrary="/home/zach/eagle-7.2.0/lbr/xilinx-xc9.lbr"
 UsedLibrary="/home/zach/eagle-7.2.0/lbr/xilinx-xcv.lbr"
 UsedLibrary="/home/zach/eagle-7.2.0/lbr/zetex.lbr"
 UsedLibrary="/home/zach/eagle-7.2.0/lbr/zilog.lbr"
+UsedLibrary="/home/zach/bears.zachary@gmail.com/Duke/F15/ECE459/MedStat/circuits/libraries/MedStatCustom.lbr"
 
 [Win_1]
 Type="Control Panel"
