@@ -368,7 +368,7 @@ UsedLibrary="/home/zach/eagle-7.2.0/lbr/zilog.lbr"
 
 [Win_1]
 Type="Control Panel"
-Loc="441 24 1040 423"
+Loc="55 14 981 1041"
 State=2
 Number=0
 

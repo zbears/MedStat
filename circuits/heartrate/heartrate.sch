@@ -224,6 +224,10 @@
 <pin name="VOUT" x="5.08" y="0" visible="off" length="middle" rot="R180"/>
 <text x="-7.112" y="2.032" size="1.27" layer="95">+</text>
 <text x="-6.858" y="-2.794" size="1.27" layer="95">-</text>
+<text x="-12.7" y="7.62" size="1.27" layer="95">MCP6001</text>
+<text x="-1.27" y="3.302" size="0.8128" layer="95" rot="R90">VDD</text>
+<text x="-1.27" y="-5.08" size="0.8128" layer="95" rot="R90">VSS</text>
+<text x="3.556" y="1.27" size="0.8128" layer="95" rot="R180">Vout</text>
 </symbol>
 </symbols>
 <devicesets>
