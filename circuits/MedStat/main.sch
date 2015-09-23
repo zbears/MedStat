@@ -2493,6 +2493,7 @@ with shutdown</description>
 <wire x1="-134.62" y1="7.62" x2="-134.62" y2="12.7" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="VSS"/>
 <wire x1="-134.62" y1="12.7" x2="-127" y2="12.7" width="0.1524" layer="91"/>
+<junction x="-137.16" y="7.62"/>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
@@ -2513,6 +2514,10 @@ with shutdown</description>
 <wire x1="-114.3" y1="-12.7" x2="-116.84" y2="-12.7" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="EN1"/>
 <wire x1="-111.76" y1="-2.54" x2="-111.76" y2="-12.7" width="0.1524" layer="91"/>
+<junction x="-116.84" y="-12.7"/>
+<junction x="-111.76" y="-12.7"/>
+<junction x="-114.3" y="-12.7"/>
+<junction x="-109.22" y="-12.7"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -2645,6 +2650,8 @@ with shutdown</description>
 <wire x1="-137.16" y1="15.24" x2="-132.08" y2="15.24" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="IN"/>
 <wire x1="-132.08" y1="15.24" x2="-127" y2="15.24" width="0.1524" layer="91"/>
+<junction x="-132.08" y="15.24"/>
+<junction x="-137.16" y="15.24"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -2674,6 +2681,8 @@ with shutdown</description>
 <wire x1="-73.66" y1="35.56" x2="-88.9" y2="35.56" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="IN"/>
 <junction x="-73.66" y="15.24"/>
+<junction x="-73.66" y="35.56"/>
+<junction x="-86.36" y="15.24"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -2683,13 +2692,15 @@ with shutdown</description>
 <wire x1="-93.98" y1="7.62" x2="-91.44" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="7.62" x2="-91.44" y2="-7.62" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="-7.62" x2="-76.2" y2="-7.62" width="0.1524" layer="91"/>
+<junction x="-91.44" y="7.62"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
+<wire x1="-93.98" y1="-10.16" x2="-81.28" y2="-10.16" width="0.1524" layer="91"/>
 <pinref part="U$1" gate="G$1" pin="TS"/>
 <wire x1="-93.98" y1="5.08" x2="-93.98" y2="-10.16" width="0.1524" layer="91"/>
-<wire x1="-93.98" y1="-10.16" x2="-81.28" y2="-10.16" width="0.1524" layer="91"/>
+<junction x="-93.98" y="5.08"/>
 </segment>
 </net>
 </nets>
