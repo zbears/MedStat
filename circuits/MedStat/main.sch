@@ -2302,6 +2302,98 @@ Some male, some female. Watch your step!</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="linear-technology">
+<description>&lt;b&gt;Linear Technology Devices&lt;/b&gt;&lt;p&gt;
+http://www.linear-tech.com&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SOT223">
+<description>&lt;b&gt;Small Outline Transistor&lt;/b&gt;</description>
+<wire x1="3.2766" y1="1.778" x2="3.2766" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="3.2766" y1="-1.778" x2="-3.2766" y2="-1.778" width="0.2032" layer="21"/>
+<wire x1="-3.2766" y1="-1.778" x2="-3.2766" y2="1.778" width="0.2032" layer="21"/>
+<wire x1="-3.2766" y1="1.778" x2="3.2766" y2="1.778" width="0.2032" layer="21"/>
+<smd name="1" x="-2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="2" x="0" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="3" x="2.3114" y="-3.0988" dx="1.2192" dy="2.2352" layer="1"/>
+<smd name="4" x="0" y="3.099" dx="3.6" dy="2.2" layer="1"/>
+<text x="-3.6068" y="-3.302" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="4.8768" y="-3.302" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+<rectangle x1="-1.6002" y1="1.8034" x2="1.6002" y2="3.6576" layer="51"/>
+<rectangle x1="-0.4318" y1="-3.6576" x2="0.4318" y2="-1.8034" layer="51"/>
+<rectangle x1="-2.7432" y1="-3.6576" x2="-1.8796" y2="-1.8034" layer="51"/>
+<rectangle x1="1.8796" y1="-3.6576" x2="2.7432" y2="-1.8034" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="LT1129-3">
+<wire x1="-7.62" y1="5.08" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="7.62" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="7.62" y1="-2.54" x2="-7.62" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-2.54" x2="-7.62" y2="5.08" width="0.254" layer="94"/>
+<text x="-2.032" y="-1.524" size="1.524" layer="95">GND</text>
+<text x="-7.62" y="6.35" size="1.778" layer="95">&gt;NAME</text>
+<text x="2.54" y="6.35" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="IN" x="-10.16" y="2.54" length="short" direction="in"/>
+<pin name="OUT" x="10.16" y="2.54" length="short" direction="out" rot="R180"/>
+<pin name="GND" x="0" y="-5.08" visible="pad" length="short" direction="pwr" rot="R90"/>
+</symbol>
+<symbol name="GND">
+<text x="-2.54" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<pin name="GND" x="0" y="-2.54" length="short" direction="pwr" rot="R90"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="LT1963EST" prefix="IC">
+<description>&lt;b&gt;1.5A, Low Noise, Fast Transient Response LDO Regulator&lt;/b&gt;&lt;p&gt;
+Source: http://www.linear.com/pc/downloadDocument.do?navId=H0,C3,P2222,D3148</description>
+<gates>
+<gate name="G$1" symbol="LT1129-3" x="0" y="0"/>
+<gate name="G$2" symbol="GND" x="20.32" y="-2.54" addlevel="request"/>
+</gates>
+<devices>
+<device name="" package="SOT223">
+<connects>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="3"/>
+<connect gate="G$2" pin="GND" pad="4"/>
+</connects>
+<technologies>
+<technology name="-1.5">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="LT1963EST-1.5" constant="no"/>
+<attribute name="OC_FARNELL" value="1663528" constant="no"/>
+<attribute name="OC_NEWARK" value="57M7534" constant="no"/>
+</technology>
+<technology name="-1.8">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="LT1963EST-1.8" constant="no"/>
+<attribute name="OC_FARNELL" value="1503436" constant="no"/>
+<attribute name="OC_NEWARK" value="57M7538" constant="no"/>
+</technology>
+<technology name="-2.5">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="LT1963EST-2.5" constant="no"/>
+<attribute name="OC_FARNELL" value="1501031" constant="no"/>
+<attribute name="OC_NEWARK" value="57M7542" constant="no"/>
+</technology>
+<technology name="-3.3">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="LT1963EST-3.3" constant="no"/>
+<attribute name="OC_FARNELL" value="1501032" constant="no"/>
+<attribute name="OC_NEWARK" value="57M7546" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -2349,6 +2441,7 @@ Some male, some female. Watch your step!</description>
 <part name="R8" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603" value="10k"/>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="JP1" library="SparkFun-Connectors" deviceset="USB_MICROB_PLUG" device="-SMT"/>
+<part name="IC2" library="linear-technology" deviceset="LT1963EST" device="" technology="-3.3"/>
 </parts>
 <sheets>
 <sheet>
@@ -2408,6 +2501,7 @@ Some male, some female. Watch your step!</description>
 <instance part="R8" gate="G$1" x="-167.64" y="30.48" rot="R90"/>
 <instance part="GND11" gate="1" x="-167.64" y="38.1" rot="R180"/>
 <instance part="JP1" gate="G$1" x="-170.18" y="-5.08"/>
+<instance part="IC2" gate="G$1" x="-81.28" y="20.32"/>
 </instances>
 <busses>
 </busses>
@@ -2491,6 +2585,12 @@ Some male, some female. Watch your step!</description>
 <wire x1="-106.68" y1="22.86" x2="-106.68" y2="17.78" width="0.1524" layer="91"/>
 <pinref part="GND8" gate="1" pin="GND"/>
 <junction x="-106.68" y="17.78"/>
+<pinref part="IC2" gate="G$1" pin="IN"/>
+<wire x1="-91.44" y1="22.86" x2="-106.68" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="IC2" gate="G$1" pin="GND"/>
+<wire x1="-81.28" y1="15.24" x2="-93.98" y2="15.24" width="0.1524" layer="91"/>
+<wire x1="-93.98" y1="15.24" x2="-93.98" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="-93.98" y1="17.78" x2="-106.68" y2="17.78" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C3" gate="G$1" pin="2"/>
@@ -2608,10 +2708,13 @@ Some male, some female. Watch your step!</description>
 <wire x1="-43.18" y1="27.94" x2="-50.8" y2="27.94" width="0.2032" layer="91"/>
 <wire x1="-50.8" y1="27.94" x2="-50.8" y2="2.54" width="0.2032" layer="91"/>
 <wire x1="-50.8" y1="27.94" x2="-55.88" y2="27.94" width="0.2032" layer="91"/>
-<wire x1="-55.88" y1="27.94" x2="-55.88" y2="-15.24" width="0.2032" layer="91"/>
+<wire x1="-55.88" y1="27.94" x2="-55.88" y2="22.86" width="0.2032" layer="91"/>
 <pinref part="U1" gate="G$1" pin="DVDD"/>
+<wire x1="-55.88" y1="22.86" x2="-55.88" y2="-15.24" width="0.2032" layer="91"/>
 <wire x1="-55.88" y1="-15.24" x2="-20.32" y2="-15.24" width="0.2032" layer="91"/>
 <label x="-50.8" y="30.48" size="1.778" layer="95"/>
+<pinref part="IC2" gate="G$1" pin="OUT"/>
+<wire x1="-71.12" y1="22.86" x2="-55.88" y2="22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="LSP1" gate="1" pin="MP"/>
