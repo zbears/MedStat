@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -56,7 +56,7 @@
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
-<layer number="93" name="Pins" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
 <layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
@@ -1358,10 +1358,6 @@ drill 1.0 mm</description>
 <part name="LSP1" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP2" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP3" library="solpad" deviceset="LSP10" device=""/>
-<part name="LSP4" library="solpad" deviceset="LSP10" device=""/>
-<part name="LSP5" library="solpad" deviceset="LSP10" device=""/>
-<part name="LSP6" library="solpad" deviceset="LSP10" device=""/>
-<part name="LSP7" library="solpad" deviceset="LSP10" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1372,16 +1368,11 @@ drill 1.0 mm</description>
 <wire x1="5.08" y1="-43.18" x2="5.08" y2="-81.28" width="0.2032" layer="97" style="shortdash"/>
 <wire x1="5.08" y1="-81.28" x2="-73.66" y2="-81.28" width="0.2032" layer="97" style="shortdash"/>
 <wire x1="-73.66" y1="-81.28" x2="-73.66" y2="-43.18" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="60.96" y1="-48.26" x2="93.98" y2="-48.26" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="93.98" y1="-48.26" x2="93.98" y2="-81.28" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="93.98" y1="-81.28" x2="60.96" y2="-81.28" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="60.96" y1="-81.28" x2="60.96" y2="-48.26" width="0.2032" layer="97" style="shortdash"/>
-<text x="60.96" y="-45.72" size="1.778" layer="97">INDICATOR LEDS</text>
-<wire x1="55.88" y1="-5.08" x2="55.88" y2="-40.64" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="55.88" y1="-40.64" x2="99.06" y2="-40.64" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="99.06" y1="-40.64" x2="99.06" y2="-5.08" width="0.2032" layer="97" style="shortdash"/>
-<wire x1="99.06" y1="-5.08" x2="55.88" y2="-5.08" width="0.2032" layer="97" style="shortdash"/>
-<text x="55.88" y="-2.54" size="1.778" layer="97">MOISTURE SENSOR</text>
+<wire x1="38.1" y1="-45.72" x2="71.12" y2="-45.72" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="71.12" y1="-45.72" x2="71.12" y2="-78.74" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="71.12" y1="-78.74" x2="38.1" y2="-78.74" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="38.1" y1="-78.74" x2="38.1" y2="-45.72" width="0.2032" layer="97" style="shortdash"/>
+<text x="38.1" y="-43.18" size="1.778" layer="97">INDICATOR LEDS</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="0" y="0"/>
@@ -1396,13 +1387,9 @@ drill 1.0 mm</description>
 <instance part="GND6" gate="1" x="-12.7" y="-68.58" rot="R90"/>
 <instance part="C1" gate="G$1" x="-53.34" y="-63.5"/>
 <instance part="C2" gate="G$1" x="-60.96" y="-63.5"/>
-<instance part="LSP1" gate="1" x="68.58" y="-58.42"/>
-<instance part="LSP2" gate="1" x="76.2" y="-58.42"/>
-<instance part="LSP3" gate="1" x="83.82" y="-58.42"/>
-<instance part="LSP4" gate="1" x="66.04" y="-15.24"/>
-<instance part="LSP5" gate="1" x="73.66" y="-15.24"/>
-<instance part="LSP6" gate="1" x="88.9" y="-15.24"/>
-<instance part="LSP7" gate="1" x="81.28" y="-15.24"/>
+<instance part="LSP1" gate="1" x="45.72" y="-55.88"/>
+<instance part="LSP2" gate="1" x="53.34" y="-55.88"/>
+<instance part="LSP3" gate="1" x="60.96" y="-55.88"/>
 </instances>
 <busses>
 </busses>
@@ -1471,13 +1458,8 @@ drill 1.0 mm</description>
 </segment>
 <segment>
 <pinref part="LSP2" gate="1" pin="MP"/>
-<label x="73.66" y="-76.2" size="1.778" layer="95" rot="R90"/>
-<wire x1="76.2" y1="-60.96" x2="76.2" y2="-76.2" width="0.2032" layer="91"/>
-</segment>
-<segment>
-<pinref part="LSP5" gate="1" pin="MP"/>
-<wire x1="73.66" y1="-17.78" x2="73.66" y2="-38.1" width="0.2032" layer="91"/>
-<label x="71.12" y="-27.94" size="1.778" layer="95" rot="R90"/>
+<label x="50.8" y="-73.66" size="1.778" layer="95" rot="R90"/>
+<wire x1="53.34" y1="-58.42" x2="53.34" y2="-73.66" width="0.2032" layer="91"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -1560,49 +1542,20 @@ drill 1.0 mm</description>
 </segment>
 <segment>
 <pinref part="LSP1" gate="1" pin="MP"/>
-<label x="66.04" y="-76.2" size="1.778" layer="95" rot="R90"/>
-<wire x1="68.58" y1="-60.96" x2="68.58" y2="-76.2" width="0.2032" layer="91"/>
-</segment>
-<segment>
-<pinref part="LSP4" gate="1" pin="MP"/>
-<wire x1="66.04" y1="-17.78" x2="66.04" y2="-38.1" width="0.2032" layer="91"/>
-<label x="63.5" y="-27.94" size="1.778" layer="95" rot="R90"/>
+<label x="43.18" y="-73.66" size="1.778" layer="95" rot="R90"/>
+<wire x1="45.72" y1="-58.42" x2="45.72" y2="-73.66" width="0.2032" layer="91"/>
 </segment>
 </net>
 <net name="!LED_ENABLE" class="0">
 <segment>
+<pinref part="LSP3" gate="1" pin="MP"/>
+<label x="58.42" y="-73.66" size="1.778" layer="95" rot="R90"/>
+<wire x1="60.96" y1="-58.42" x2="60.96" y2="-73.66" width="0.2032" layer="91"/>
+</segment>
+<segment>
 <pinref part="U1" gate="G$1" pin="P2_2"/>
 <label x="-35.56" y="5.08" size="1.778" layer="95"/>
 <wire x1="-20.32" y1="5.08" x2="-35.56" y2="5.08" width="0.2032" layer="91"/>
-</segment>
-<segment>
-<pinref part="LSP3" gate="1" pin="MP"/>
-<label x="81.28" y="-76.2" size="1.778" layer="95" rot="R90"/>
-<wire x1="83.82" y1="-60.96" x2="83.82" y2="-76.2" width="0.2032" layer="91"/>
-</segment>
-</net>
-<net name="!SENSOR_ENABLE" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="P2_1"/>
-<wire x1="-20.32" y1="2.54" x2="-38.1" y2="2.54" width="0.2032" layer="91"/>
-<label x="-40.64" y="2.54" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="LSP7" gate="1" pin="MP"/>
-<wire x1="81.28" y1="-17.78" x2="81.28" y2="-38.1" width="0.2032" layer="91"/>
-<label x="78.74" y="-38.1" size="1.778" layer="95" rot="R90"/>
-</segment>
-</net>
-<net name="MOISTURE_OUT" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="P2_0"/>
-<wire x1="-20.32" y1="0" x2="-38.1" y2="0" width="0.2032" layer="91"/>
-<label x="-40.64" y="0" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="LSP6" gate="1" pin="MP"/>
-<wire x1="88.9" y1="-17.78" x2="88.9" y2="-38.1" width="0.2032" layer="91"/>
-<label x="86.36" y="-38.1" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 </nets>
