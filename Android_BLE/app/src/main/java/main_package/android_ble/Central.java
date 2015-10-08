@@ -40,7 +40,7 @@ public class Central extends Activity implements BluetoothAdapter.LeScanCallback
         devicesList = (LinearLayout) findViewById(R.id.device_list);
         statusView = (TextView) findViewById(R.id.statusView);
         statusView.setText("Starting...");
-
+        /*
         btManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         btDevices = new ArrayList<>();
         //Check if bluetooth is enabled on central device
@@ -62,7 +62,7 @@ public class Central extends Activity implements BluetoothAdapter.LeScanCallback
         }
 
         //startScan();
-
+        */
 
     }
 
