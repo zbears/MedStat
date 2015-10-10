@@ -369,8 +369,8 @@ UsedLibrary="/home/zach/bears.zachary@gmail.com/Duke/F15/ECE459/MedStat/circuits
 
 [Win_1]
 Type="Control Panel"
-Loc="89 24 688 423"
-State=1
+Loc="55 14 981 1041"
+State=2
 Number=0
 
 [Desktop]

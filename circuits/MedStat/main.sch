@@ -1362,6 +1362,10 @@ drill 1.0 mm</description>
 <part name="LSP5" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP6" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP7" library="solpad" deviceset="LSP10" device=""/>
+<part name="LSP8" library="solpad" deviceset="LSP10" device=""/>
+<part name="LSP9" library="solpad" deviceset="LSP10" device=""/>
+<part name="LSP10" library="solpad" deviceset="LSP10" device=""/>
+<part name="LSP11" library="solpad" deviceset="LSP10" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1382,6 +1386,11 @@ drill 1.0 mm</description>
 <wire x1="76.2" y1="-38.1" x2="76.2" y2="-2.54" width="0.2032" layer="97" style="shortdash"/>
 <wire x1="76.2" y1="-2.54" x2="33.02" y2="-2.54" width="0.2032" layer="97" style="shortdash"/>
 <text x="33.02" y="0" size="1.778" layer="97">MOISTURE SENSOR</text>
+<wire x1="30.48" y1="48.26" x2="30.48" y2="12.7" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="30.48" y1="12.7" x2="68.58" y2="12.7" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="68.58" y1="12.7" x2="68.58" y2="48.26" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="68.58" y1="48.26" x2="30.48" y2="48.26" width="0.2032" layer="97" style="shortdash"/>
+<text x="30.48" y="50.8" size="1.778" layer="97">PULSE SENSOR</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="0" y="0"/>
@@ -1403,6 +1412,10 @@ drill 1.0 mm</description>
 <instance part="LSP5" gate="1" x="50.8" y="-12.7"/>
 <instance part="LSP6" gate="1" x="66.04" y="-12.7"/>
 <instance part="LSP7" gate="1" x="58.42" y="-12.7"/>
+<instance part="LSP8" gate="1" x="35.56" y="40.64"/>
+<instance part="LSP9" gate="1" x="43.18" y="40.64"/>
+<instance part="LSP10" gate="1" x="50.8" y="40.64"/>
+<instance part="LSP11" gate="1" x="58.42" y="40.64"/>
 </instances>
 <busses>
 </busses>
@@ -1478,6 +1491,11 @@ drill 1.0 mm</description>
 <pinref part="LSP5" gate="1" pin="MP"/>
 <wire x1="50.8" y1="-15.24" x2="50.8" y2="-35.56" width="0.2032" layer="91"/>
 <label x="48.26" y="-25.4" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="LSP9" gate="1" pin="MP"/>
+<wire x1="43.18" y1="38.1" x2="43.18" y2="15.24" width="0.2032" layer="91"/>
+<label x="40.64" y="22.86" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="SDA" class="0">
@@ -1568,6 +1586,11 @@ drill 1.0 mm</description>
 <wire x1="43.18" y1="-15.24" x2="43.18" y2="-35.56" width="0.2032" layer="91"/>
 <label x="40.64" y="-25.4" size="1.778" layer="95" rot="R90"/>
 </segment>
+<segment>
+<pinref part="LSP8" gate="1" pin="MP"/>
+<wire x1="35.56" y1="38.1" x2="35.56" y2="15.24" width="0.2032" layer="91"/>
+<label x="33.02" y="22.86" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="!LED_ENABLE" class="0">
 <segment>
@@ -1592,6 +1615,11 @@ drill 1.0 mm</description>
 <wire x1="-20.32" y1="2.54" x2="-38.1" y2="2.54" width="0.2032" layer="91"/>
 <label x="-40.64" y="2.54" size="1.778" layer="95"/>
 </segment>
+<segment>
+<pinref part="LSP10" gate="1" pin="MP"/>
+<wire x1="50.8" y1="38.1" x2="50.8" y2="15.24" width="0.2032" layer="91"/>
+<label x="48.26" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
 </net>
 <net name="MOISTURE_OUT" class="0">
 <segment>
@@ -1603,6 +1631,18 @@ drill 1.0 mm</description>
 <pinref part="U1" gate="G$1" pin="P2_0"/>
 <wire x1="-20.32" y1="0" x2="-38.1" y2="0" width="0.2032" layer="91"/>
 <label x="-40.64" y="0" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="PULSE_OUT" class="0">
+<segment>
+<pinref part="LSP11" gate="1" pin="MP"/>
+<wire x1="58.42" y1="38.1" x2="58.42" y2="15.24" width="0.2032" layer="91"/>
+<label x="55.88" y="15.24" size="1.778" layer="95" rot="R90"/>
+</segment>
+<segment>
+<pinref part="U1" gate="G$1" pin="P1_7"/>
+<wire x1="-20.32" y1="-2.54" x2="-38.1" y2="-2.54" width="0.2032" layer="91"/>
+<label x="-38.1" y="-2.54" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
