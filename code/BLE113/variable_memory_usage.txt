@@ -1,4 +1,4 @@
-14
+18
 0:0	GAP_AD_FLAG_BREDR_NOT_SUPPORTED
 0:0	GAP_AD_FLAG_GENERAL_DISCOVERABLE
 0:0	GAP_AD_FLAG_LIMITED_DISCOVERABLE
@@ -23,6 +23,9 @@
 0:0	attributes_attribute_change_reason_write_request_user
 0:0	attributes_attribute_status_flag_indicate
 0:0	attributes_attribute_status_flag_notify
+0:0	c_appearance
+0:0	c_device_name
+0:0	c_port_status
 0:0	connection_completed
 0:0	connection_connected
 0:0	connection_encrypted
@@ -76,6 +79,6 @@
 0:0	system_endpoint_uart0
 0:0	system_endpoint_uart1
 0:0	system_endpoint_usb
-0:0	xgatt_battery
 0:10	tmp
 10:4	led
+14:4	connected

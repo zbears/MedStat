@@ -1,49 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
-
-    <service uuid="1800">
-      <description>Generic Access Profile</description>
-
-      <characteristic uuid="2a00">
+    <!-- 1800: org.bluetooth.service.generic_access -->
+    <service uuid="1800" id="s_generic_access">
+      <description>Generic Access</description>
+       <!-- 2A00: org.bluetooth.characteristic.gap.device_name -->
+      <characteristic uuid="2A00" id="c_device_name">
+        <description>Device Name</description>
         <properties read="true" const="true" />
-        <value>BG Demo</value>
+        <value>MedStat</value>
       </characteristic>
-
-      <characteristic uuid="2a01">
+      <!-- 2A01: org.bluetooth.characteristic.gap.appearance -->
+      <characteristic uuid="2A01" id="c_appearance">
+        <description>Appearance</description>
         <properties read="true" const="true" />
-        <value type="hex">4142</value>
+        <!-- Generic device, Generic category -->
+        <value type="hex">0000</value>
       </characteristic>
     </service>
 
-    <service type="primary" uuid="9000" id="manufacturer">
-        <characteristic uuid="9100">
-            <properties read="true" const="true" />
-            <value type="hex">000780c0ffeef00d</value>
-        </characteristic>
-        <characteristic uuid="9101">
-            <properties read="true" const="true" />
-            <value>modelnumber</value>
-        </characteristic>
-        <characteristic uuid="9106">
-            <properties read="true" const="true" />
-            <value>Bluegiga</value>
+    <!-- custom service for Port output setting -->
+    <service uuid="624e957f-cb42-4cd6-bacc-84aeb898f69b" advertise="true">
+        <description>Custom Output Setting Service</description>
+        
+        <!-- custom read/write characteristic for getting/setting I/O port status --> 
+        <characteristic uuid="df342b03-53f9-43b4-acb6-62a63ca0615a" id="c_port_status">
+            <description>IO Port Status</description>
+            <properties read="true" write="true" />
+            <value length="1"/>
         </characteristic>
     </service>
 
-    <service uuid="e001">
-       <description>Battery status</description>
-       <include id="manufacturer" />
-      <characteristic uuid="e101" id="xgatt_battery">
-          <properties read="true" notify="true" />
-          <value type="hex">ABCD</value>
-      </characteristic>
-    </service>
-    
-    <service uuid="00431c4a-a7a4-428b-a96d-d92d43c8c7cf">
-        <description>Bluegiga demo service</description>
-        <characteristic uuid="f1b41cde-dbf5-4acf-8679-ecb8b4dca6fe">
-            <properties read="true" write="true"/>
-            <value type="hex">coffee</value>
-        </characteristic>
-    </service>
+
 </configuration>
