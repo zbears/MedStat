@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/statusView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Staus View"
+        style="@style/AlertDialog.AppCompat"
+        android:textSize="40dp" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/device_list"
+        android:layout_below="@+id/statusView" />
+
+
+
+</LinearLayout><!-- From: file:/C:/Users/Negatu/Desktop/Fall_2015/MedStat/Android_BLE/app/src/main/res/layout/central_layout.xml -->
