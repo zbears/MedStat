@@ -347,6 +347,7 @@ UsedLibrary="C:/EAGLE-7.4.0/lbr/xilinx-xcv.lbr"
 UsedLibrary="C:/EAGLE-7.4.0/lbr/zetex.lbr"
 UsedLibrary="C:/EAGLE-7.4.0/lbr/zilog.lbr"
 UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libraries/GeekAmmo.lbr"
+UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libraries/LMZ10500.lbr"
 UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libraries/LilyPad-Wearables.lbr"
 UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libraries/MedStatCustom.lbr"
 UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libraries/Simplex-Battery.lbr"
@@ -382,7 +383,6 @@ UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libra
 UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libraries/holes.lbr"
 UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libraries/microbuilder.lbr"
 UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/circuits/libraries/sf-bluegiga.lbr"
-UsedLibrary="C:/Users/Michael/Documents/Docs/Duke/ECE 539/MedStat/LMZ10500.lbr"
 
 [Win_1]
 Type="Control Panel"
