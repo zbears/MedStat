@@ -133,10 +133,10 @@
 </layers>
 <board>
 <plain>
-<wire x1="-3.81" y1="40.64" x2="26.34" y2="40.64" width="0" layer="20"/>
-<wire x1="26.34" y1="40.64" x2="26.34" y2="59.68" width="0" layer="20"/>
-<wire x1="26.34" y1="59.68" x2="-3.81" y2="59.68" width="0" layer="20"/>
-<wire x1="-3.81" y1="59.68" x2="-3.81" y2="40.64" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="100" y2="0" width="0" layer="20"/>
+<wire x1="100" y1="0" x2="100" y2="80" width="0" layer="20"/>
+<wire x1="100" y1="80" x2="0" y2="80" width="0" layer="20"/>
+<wire x1="0" y1="80" x2="0" y2="0" width="0" layer="20"/>
 </plain>
 <libraries>
 <library name="transistor-small-signal">
@@ -161,29 +161,6 @@ www.irf.com&lt;p&gt;
 <rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
 <rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
 <rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
-</package>
-</packages>
-</library>
-<library name="solpad">
-<description>&lt;b&gt;Solder Pads/Test Points&lt;/b&gt;&lt;p&gt;
-&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
-<packages>
-<package name="MCS10B">
-<description>&lt;b&gt;SOLDER PAD&lt;/b&gt;&lt;p&gt;
-drill 1.0 mm</description>
-<wire x1="-1.397" y1="0.508" x2="-1.397" y2="-0.508" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="-1.397" x2="1.397" y2="-0.508" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="1.397" x2="1.397" y2="0.508" width="0.1524" layer="21"/>
-<wire x1="1.397" y1="0.508" x2="1.397" y2="-0.508" width="0.1524" layer="21"/>
-<wire x1="-1.397" y1="0.508" x2="-0.508" y2="1.397" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="1.397" x2="0.508" y2="1.397" width="0.1524" layer="21"/>
-<wire x1="-0.508" y1="-1.397" x2="-1.397" y2="-0.508" width="0.1524" layer="21"/>
-<wire x1="0.508" y1="-1.397" x2="-0.508" y2="-1.397" width="0.1524" layer="21"/>
-<circle x="0" y="0" radius="0.762" width="0.1524" layer="51"/>
-<circle x="0" y="0" radius="0.381" width="0.254" layer="51"/>
-<pad name="MP" x="0" y="0" drill="1.016" diameter="2.159" shape="octagon"/>
-<text x="-1.27" y="1.651" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="0" y="0.381" size="0.0254" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 </library>
@@ -403,44 +380,22 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="Q1" library="transistor-small-signal" package="SOT23" value="BSS84" x="1.27" y="53.34"/>
-<element name="P1" library="solpad" package="MCS10B" value="MCS10B" x="22.86" y="54.61"/>
-<element name="P2" library="solpad" package="MCS10B" value="MCS10B" x="22.86" y="45.72"/>
-<element name="GND" library="solpad" package="MCS10B" value="MCS10B" x="16.51" y="45.72" rot="R180"/>
-<element name="VDD" library="solpad" package="MCS10B" value="MCS10B" x="5.08" y="45.72" rot="R180"/>
-<element name="EN" library="solpad" package="MCS10B" value="MCS10B" x="0" y="45.72" rot="R180"/>
-<element name="OUT" library="solpad" package="MCS10B" value="MCS10B" x="10.16" y="45.72" rot="R180"/>
-<element name="R1" library="SparkFun-Resistors" package="0603-RES" value="1M" x="-1.27" y="38.1">
-<attribute name="PROD_ID" value="RES-07868" x="-1.27" y="38.1" size="1.778" layer="27" display="off"/>
+<element name="Q1" library="transistor-small-signal" package="SOT23" value="BSS84" x="6.35" y="48.26"/>
+<element name="R1" library="SparkFun-Resistors" package="0603-RES" value="1M" x="7.62" y="53.34">
+<attribute name="PROD_ID" value="RES-07868" x="7.62" y="53.34" size="1.778" layer="27" display="off"/>
 </element>
 </elements>
 <signals>
-<signal name="N$3">
-<contactref element="P1" pad="MP"/>
-<contactref element="OUT" pad="MP"/>
+<signal name="N$1">
+<contactref element="R1" pad="1"/>
 <contactref element="Q1" pad="3"/>
-<wire x1="10.16" y1="45.72" x2="22.86" y2="54.61" width="0" layer="19" extent="1-1"/>
-<wire x1="1.27" y1="54.44" x2="10.16" y2="45.72" width="0" layer="19" extent="1-1"/>
+<wire x1="6.77" y1="53.34" x2="6.35" y2="49.36" width="0" layer="19" extent="1-1"/>
+</signal>
+<signal name="N$3">
+<contactref element="R1" pad="2"/>
 </signal>
 <signal name="VDD">
 <contactref element="Q1" pad="2"/>
-<contactref element="VDD" pad="MP"/>
-<wire x1="5.08" y1="45.72" x2="2.22" y2="52.24" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="GND">
-<contactref element="GND" pad="MP"/>
-<contactref element="R1" pad="2"/>
-<wire x1="-0.42" y1="38.1" x2="16.51" y2="45.72" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$2">
-<contactref element="EN" pad="MP"/>
-<contactref element="Q1" pad="1"/>
-<wire x1="0" y1="45.72" x2="0.32" y2="52.24" width="0" layer="19" extent="1-1"/>
-</signal>
-<signal name="N$1">
-<contactref element="P2" pad="MP"/>
-<contactref element="R1" pad="1"/>
-<wire x1="-2.12" y1="38.1" x2="22.86" y2="45.72" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 </board>
