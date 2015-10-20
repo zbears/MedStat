@@ -1854,10 +1854,10 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <part name="LSP1" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP2" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP3" library="solpad" deviceset="LSP10" device=""/>
-<part name="LSP4" library="solpad" deviceset="LSP10" device=""/>
-<part name="LSP5" library="solpad" deviceset="LSP10" device=""/>
-<part name="LSP6" library="solpad" deviceset="LSP10" device=""/>
-<part name="LSP7" library="solpad" deviceset="LSP10" device=""/>
+<part name="VDD" library="solpad" deviceset="LSP10" device=""/>
+<part name="GND" library="solpad" deviceset="LSP10" device=""/>
+<part name="OUT" library="solpad" deviceset="LSP10" device=""/>
+<part name="EN" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP8" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP9" library="solpad" deviceset="LSP10" device=""/>
 <part name="LSP10" library="solpad" deviceset="LSP10" device=""/>
@@ -2000,10 +2000,10 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <instance part="LSP1" gate="1" x="-55.88" y="86.36"/>
 <instance part="LSP2" gate="1" x="-48.26" y="86.36"/>
 <instance part="LSP3" gate="1" x="-40.64" y="86.36"/>
-<instance part="LSP4" gate="1" x="-10.16" y="86.36"/>
-<instance part="LSP5" gate="1" x="-2.54" y="86.36"/>
-<instance part="LSP6" gate="1" x="12.7" y="86.36"/>
-<instance part="LSP7" gate="1" x="5.08" y="86.36"/>
+<instance part="VDD" gate="1" x="-10.16" y="86.36"/>
+<instance part="GND" gate="1" x="-2.54" y="86.36"/>
+<instance part="OUT" gate="1" x="12.7" y="86.36"/>
+<instance part="EN" gate="1" x="5.08" y="86.36"/>
 <instance part="LSP8" gate="1" x="38.1" y="88.9"/>
 <instance part="LSP9" gate="1" x="45.72" y="88.9"/>
 <instance part="LSP10" gate="1" x="53.34" y="88.9"/>
@@ -2160,7 +2160,7 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <wire x1="-48.26" y1="83.82" x2="-48.26" y2="68.58" width="0.2032" layer="91"/>
 </segment>
 <segment>
-<pinref part="LSP5" gate="1" pin="MP"/>
+<pinref part="GND" gate="1" pin="MP"/>
 <wire x1="-2.54" y1="83.82" x2="-2.54" y2="63.5" width="0.2032" layer="91"/>
 <label x="-5.08" y="73.66" size="1.778" layer="95" rot="R90"/>
 </segment>
@@ -2297,7 +2297,7 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <wire x1="-55.88" y1="83.82" x2="-55.88" y2="68.58" width="0.2032" layer="91"/>
 </segment>
 <segment>
-<pinref part="LSP4" gate="1" pin="MP"/>
+<pinref part="VDD" gate="1" pin="MP"/>
 <wire x1="-10.16" y1="83.82" x2="-10.16" y2="63.5" width="0.2032" layer="91"/>
 <label x="-12.7" y="73.66" size="1.778" layer="95" rot="R90"/>
 </segment>
@@ -2321,7 +2321,7 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 </net>
 <net name="!SENSOR_ENABLE" class="0">
 <segment>
-<pinref part="LSP7" gate="1" pin="MP"/>
+<pinref part="EN" gate="1" pin="MP"/>
 <wire x1="5.08" y1="83.82" x2="5.08" y2="63.5" width="0.2032" layer="91"/>
 <label x="2.54" y="63.5" size="1.778" layer="95" rot="R90"/>
 </segment>
@@ -2338,7 +2338,7 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 </net>
 <net name="MOISTURE_OUT" class="0">
 <segment>
-<pinref part="LSP6" gate="1" pin="MP"/>
+<pinref part="OUT" gate="1" pin="MP"/>
 <wire x1="12.7" y1="83.82" x2="12.7" y2="63.5" width="0.2032" layer="91"/>
 <label x="10.16" y="63.5" size="1.778" layer="95" rot="R90"/>
 </segment>
