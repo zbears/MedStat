@@ -913,13 +913,13 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 <part name="R2" library="SparkFun-Resistors" deviceset="10KOHM-1/10W-1%(0603)" device="0603" value="10K"/>
 <part name="SCL_RTC" library="solpad" deviceset="SE13" device=""/>
 <part name="SDA_RTC" library="solpad" deviceset="SE13" device=""/>
-<part name="Y2" library="SparkFun-FreqCtrl" deviceset="CRYSTAL" device="TC26H" value="32.768kHz"/>
 <part name="GND" library="solpad" deviceset="SE13" device=""/>
 <part name="GND2" library="supply1" deviceset="GND" device=""/>
 <part name="VDD1" library="supply1" deviceset="VDD" device=""/>
 <part name="VDD2" library="supply1" deviceset="VDD" device=""/>
 <part name="VDD3" library="supply1" deviceset="VDD" device=""/>
 <part name="VDD" library="solpad" deviceset="SE13" device=""/>
+<part name="Y1" library="SparkFun-FreqCtrl" deviceset="CRYSTAL" device="SMD"/>
 </parts>
 <sheets>
 <sheet>
@@ -931,13 +931,13 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 <instance part="R2" gate="G$1" x="88.9" y="68.58" rot="R90"/>
 <instance part="SCL_RTC" gate="1" x="73.66" y="68.58" rot="R270"/>
 <instance part="SDA_RTC" gate="1" x="96.52" y="63.5" rot="R270"/>
-<instance part="Y2" gate="G$1" x="22.86" y="60.96" rot="R90"/>
 <instance part="GND" gate="1" x="68.58" y="53.34" rot="R270"/>
 <instance part="GND2" gate="1" x="33.02" y="53.34" rot="R270"/>
 <instance part="VDD1" gate="G$1" x="33.02" y="71.12"/>
 <instance part="VDD2" gate="G$1" x="63.5" y="83.82"/>
 <instance part="VDD3" gate="G$1" x="88.9" y="76.2"/>
 <instance part="VDD" gate="1" x="35.56" y="71.12"/>
+<instance part="Y1" gate="G$1" x="22.86" y="60.96" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -964,16 +964,16 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="Y2" gate="G$1" pin="1"/>
 <pinref part="DS1307" gate="G$1" pin="X2"/>
 <wire x1="22.86" y1="58.42" x2="38.1" y2="58.42" width="0.1524" layer="91"/>
+<pinref part="Y1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="DS1307" gate="G$1" pin="X1"/>
-<pinref part="Y2" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="63.5" x2="22.86" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="Y1" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="GND" class="0">
