@@ -134,181 +134,6 @@
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
-<library name="ds1307_pcf8583">
-<description>&lt;b&gt;DS1307: 64 x 8 Serial Real-Time Clock&lt;br&gt;
-PCF8583: Clock/calendar with 240 x 8-bit RAM&lt;/b&gt;
-&lt;p&gt;Each device has a surface-mount variant with enlarged pads to accomodate both SOIC8 and 7.5mm wide SO8. It allows to interchangeably use DS1307 and PCF8583, as they are almost pin-compatible. The only exception is pin 3, which should be tied to battery anode for DS1307 or to Vdd/Vss for PCF8583 - this can be selected by a two-way SMD solder jumper (added as a separate part).&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;Do NOT use for automatic production! Doublecheck before using!&lt;/b&gt;&lt;/p&gt;</description>
-<packages>
-<package name="DIL08">
-<description>&lt;b&gt;Dual In Line&lt;/b&gt;</description>
-<wire x1="-5.08" y1="-0.635" x2="-5.08" y2="0.635" width="0.1524" layer="21" curve="180"/>
-<wire x1="-5.08" y1="-0.635" x2="-5.08" y2="-2.794" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="-2.794" x2="5.08" y2="-2.794" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="-2.794" x2="5.08" y2="2.794" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="2.794" x2="-5.08" y2="2.794" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="2.794" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
-<pad name="1" x="-3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="2" x="-1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="3" x="1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="4" x="3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="5" x="3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="6" x="1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="7" x="-1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="8" x="-3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
-<text x="-5.4864" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="6.5786" y="-2.921" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-</package>
-<package name="SOIC8">
-<description>&lt;b&gt;Small Outline IC&lt;/b&gt;</description>
-<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="3" x="0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="4" x="1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="8" x="-1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="6" x="0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<smd name="5" x="1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
-<text x="-2.667" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="3.937" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-2.15" y1="-3.1" x2="-1.66" y2="-2" layer="51"/>
-<rectangle x1="-0.88" y1="-3.1" x2="-0.39" y2="-2" layer="51"/>
-<rectangle x1="0.39" y1="-3.1" x2="0.88" y2="-2" layer="51"/>
-<rectangle x1="1.66" y1="-3.1" x2="2.15" y2="-2" layer="51"/>
-<rectangle x1="1.66" y1="2" x2="2.15" y2="3.1" layer="51"/>
-<rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
-<rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
-<rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
-</package>
-<package name="SO8-7_5+SOIC8">
-<wire x1="3.7" y1="-3.7" x2="3.7" y2="3.7" width="0.2032" layer="21"/>
-<wire x1="-3.7" y1="3.7" x2="-3.7" y2="-3.7" width="0.2032" layer="21"/>
-<wire x1="-3.75" y1="1" x2="-3.75" y2="-1" width="0.2032" layer="21" curve="-180" cap="flat"/>
-<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
-<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
-<wire x1="2.9675" y1="-3.7" x2="3.7" y2="-3.7" width="0.2032" layer="21"/>
-<wire x1="3.7" y1="3.7" x2="2.9675" y2="3.7" width="0.2032" layer="21"/>
-<wire x1="2.85" y1="-3" x2="3.5" y2="-3" width="0.2032" layer="21"/>
-<wire x1="-3.7" y1="-3.7" x2="-2.9675" y2="-3.7" width="0.2032" layer="21"/>
-<wire x1="-2.9675" y1="3.7" x2="-3.7" y2="3.7" width="0.2032" layer="21"/>
-<wire x1="-3.5" y1="-3" x2="-2.85" y2="-3" width="0.2032" layer="21"/>
-<wire x1="3.065" y1="3.7" x2="-3.065" y2="3.7" width="0.2032" layer="51"/>
-<wire x1="-3.065" y1="-3.7" x2="3.065" y2="-3.7" width="0.2032" layer="51"/>
-<wire x1="-2.865" y1="-3" x2="2.865" y2="-3" width="0.2032" layer="51"/>
-<smd name="1" x="-1.905" y="-3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
-<smd name="2" x="-0.635" y="-3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
-<smd name="3" x="0.635" y="-3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
-<smd name="4" x="1.905" y="-3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
-<smd name="5" x="1.905" y="3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
-<smd name="6" x="0.635" y="3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
-<smd name="7" x="-0.635" y="3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
-<smd name="8" x="-1.905" y="3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
-<text x="-4.04" y="-3.766" size="1.27" layer="25" rot="R90">&gt;NAME</text>
-<text x="5.294" y="-3.758" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-2.155" y1="-5.3" x2="-1.655" y2="-3.75" layer="51"/>
-<rectangle x1="-0.885" y1="-5.3" x2="-0.385" y2="-3.75" layer="51"/>
-<rectangle x1="0.385" y1="-5.3" x2="0.885" y2="-3.75" layer="51"/>
-<rectangle x1="1.655" y1="-5.3" x2="2.155" y2="-3.75" layer="51"/>
-<rectangle x1="1.655" y1="3.75" x2="2.155" y2="5.3" layer="51"/>
-<rectangle x1="0.385" y1="3.75" x2="0.885" y2="5.3" layer="51"/>
-<rectangle x1="-0.885" y1="3.75" x2="-0.385" y2="5.3" layer="51"/>
-<rectangle x1="-2.155" y1="3.75" x2="-1.655" y2="5.3" layer="51"/>
-<rectangle x1="-2.15" y1="-3.1" x2="-1.66" y2="-2" layer="51"/>
-<rectangle x1="-0.88" y1="-3.1" x2="-0.39" y2="-2" layer="51"/>
-<rectangle x1="0.39" y1="-3.1" x2="0.88" y2="-2" layer="51"/>
-<rectangle x1="1.66" y1="-3.1" x2="2.15" y2="-2" layer="51"/>
-<rectangle x1="1.66" y1="2" x2="2.15" y2="3.1" layer="51"/>
-<rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
-<rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
-<rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
-</package>
-</packages>
-<symbols>
-<symbol name="DS1307">
-<wire x1="-7.62" y1="10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
-<wire x1="10.16" y1="10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="10.16" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
-<text x="-7.62" y="11.43" size="1.778" layer="95">&gt;NAME</text>
-<text x="-7.62" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="VBAT" x="12.7" y="-7.62" length="short" direction="pas" rot="R180"/>
-<pin name="SDA" x="12.7" y="2.54" length="short" rot="R180"/>
-<pin name="SCL" x="12.7" y="7.62" length="short" direction="in" rot="R180"/>
-<pin name="SQW" x="12.7" y="-2.54" length="short" direction="oc" rot="R180"/>
-<pin name="X1" x="-10.16" y="2.54" length="short" direction="in"/>
-<pin name="X2" x="-10.16" y="-2.54" length="short" direction="out"/>
-<pin name="GND" x="-10.16" y="-7.62" length="short" direction="pwr"/>
-<pin name="VCC" x="-10.16" y="7.62" length="short" direction="pwr"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="DS1307" prefix="IC">
-<description>I2C-Bus &lt;b&gt;CLOCK/CALENDAR&lt;/b&gt;</description>
-<gates>
-<gate name="G$1" symbol="DS1307" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="DIL08">
-<connects>
-<connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="SCL" pad="6"/>
-<connect gate="G$1" pin="SDA" pad="5"/>
-<connect gate="G$1" pin="SQW" pad="7"/>
-<connect gate="G$1" pin="VBAT" pad="3"/>
-<connect gate="G$1" pin="VCC" pad="8"/>
-<connect gate="G$1" pin="X1" pad="1"/>
-<connect gate="G$1" pin="X2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="Z" package="SOIC8">
-<connects>
-<connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="SCL" pad="6"/>
-<connect gate="G$1" pin="SDA" pad="5"/>
-<connect gate="G$1" pin="SQW" pad="7"/>
-<connect gate="G$1" pin="VBAT" pad="3"/>
-<connect gate="G$1" pin="VCC" pad="8"/>
-<connect gate="G$1" pin="X1" pad="1"/>
-<connect gate="G$1" pin="X2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="/PCF8583" package="SO8-7_5+SOIC8">
-<connects>
-<connect gate="G$1" pin="GND" pad="4"/>
-<connect gate="G$1" pin="SCL" pad="6"/>
-<connect gate="G$1" pin="SDA" pad="5"/>
-<connect gate="G$1" pin="SQW" pad="7"/>
-<connect gate="G$1" pin="VBAT" pad="3"/>
-<connect gate="G$1" pin="VCC" pad="8"/>
-<connect gate="G$1" pin="X1" pad="1"/>
-<connect gate="G$1" pin="X2" pad="2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="supply1">
 <description>&lt;b&gt;Supply Symbols&lt;/b&gt;&lt;p&gt;
  GND, VCC, 0V, +5V, -5V, etc.&lt;p&gt;
@@ -898,6 +723,181 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 </deviceset>
 </devicesets>
 </library>
+<library name="ds1307_pcf8583">
+<description>&lt;b&gt;DS1307: 64 x 8 Serial Real-Time Clock&lt;br&gt;
+PCF8583: Clock/calendar with 240 x 8-bit RAM&lt;/b&gt;
+&lt;p&gt;Each device has a surface-mount variant with enlarged pads to accomodate both SOIC8 and 7.5mm wide SO8. It allows to interchangeably use DS1307 and PCF8583, as they are almost pin-compatible. The only exception is pin 3, which should be tied to battery anode for DS1307 or to Vdd/Vss for PCF8583 - this can be selected by a two-way SMD solder jumper (added as a separate part).&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Do NOT use for automatic production! Doublecheck before using!&lt;/b&gt;&lt;/p&gt;</description>
+<packages>
+<package name="DIL08">
+<description>&lt;b&gt;Dual In Line&lt;/b&gt;</description>
+<wire x1="-5.08" y1="-0.635" x2="-5.08" y2="0.635" width="0.1524" layer="21" curve="180"/>
+<wire x1="-5.08" y1="-0.635" x2="-5.08" y2="-2.794" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="-2.794" x2="5.08" y2="-2.794" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="-2.794" x2="5.08" y2="2.794" width="0.1524" layer="21"/>
+<wire x1="5.08" y1="2.794" x2="-5.08" y2="2.794" width="0.1524" layer="21"/>
+<wire x1="-5.08" y1="2.794" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
+<pad name="1" x="-3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="2" x="-1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="3" x="1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="4" x="3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="5" x="3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="6" x="1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="7" x="-1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<pad name="8" x="-3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
+<text x="-5.4864" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
+<text x="6.5786" y="-2.921" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
+</package>
+<package name="SOIC8">
+<description>&lt;b&gt;Small Outline IC&lt;/b&gt;</description>
+<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="3" x="0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="4" x="1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="8" x="-1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="6" x="0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="5" x="1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<text x="-2.667" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="3.937" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.15" y1="-3.1" x2="-1.66" y2="-2" layer="51"/>
+<rectangle x1="-0.88" y1="-3.1" x2="-0.39" y2="-2" layer="51"/>
+<rectangle x1="0.39" y1="-3.1" x2="0.88" y2="-2" layer="51"/>
+<rectangle x1="1.66" y1="-3.1" x2="2.15" y2="-2" layer="51"/>
+<rectangle x1="1.66" y1="2" x2="2.15" y2="3.1" layer="51"/>
+<rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
+<rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
+<rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
+</package>
+<package name="SO8-7_5+SOIC8">
+<wire x1="3.7" y1="-3.7" x2="3.7" y2="3.7" width="0.2032" layer="21"/>
+<wire x1="-3.7" y1="3.7" x2="-3.7" y2="-3.7" width="0.2032" layer="21"/>
+<wire x1="-3.75" y1="1" x2="-3.75" y2="-1" width="0.2032" layer="21" curve="-180" cap="flat"/>
+<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="2.9675" y1="-3.7" x2="3.7" y2="-3.7" width="0.2032" layer="21"/>
+<wire x1="3.7" y1="3.7" x2="2.9675" y2="3.7" width="0.2032" layer="21"/>
+<wire x1="2.85" y1="-3" x2="3.5" y2="-3" width="0.2032" layer="21"/>
+<wire x1="-3.7" y1="-3.7" x2="-2.9675" y2="-3.7" width="0.2032" layer="21"/>
+<wire x1="-2.9675" y1="3.7" x2="-3.7" y2="3.7" width="0.2032" layer="21"/>
+<wire x1="-3.5" y1="-3" x2="-2.85" y2="-3" width="0.2032" layer="21"/>
+<wire x1="3.065" y1="3.7" x2="-3.065" y2="3.7" width="0.2032" layer="51"/>
+<wire x1="-3.065" y1="-3.7" x2="3.065" y2="-3.7" width="0.2032" layer="51"/>
+<wire x1="-2.865" y1="-3" x2="2.865" y2="-3" width="0.2032" layer="51"/>
+<smd name="1" x="-1.905" y="-3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
+<smd name="2" x="-0.635" y="-3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
+<smd name="3" x="0.635" y="-3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
+<smd name="4" x="1.905" y="-3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
+<smd name="5" x="1.905" y="3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
+<smd name="6" x="0.635" y="3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
+<smd name="7" x="-0.635" y="3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
+<smd name="8" x="-1.905" y="3.6725" dx="4.345" dy="0.8" layer="1" rot="R90"/>
+<text x="-4.04" y="-3.766" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="5.294" y="-3.758" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.155" y1="-5.3" x2="-1.655" y2="-3.75" layer="51"/>
+<rectangle x1="-0.885" y1="-5.3" x2="-0.385" y2="-3.75" layer="51"/>
+<rectangle x1="0.385" y1="-5.3" x2="0.885" y2="-3.75" layer="51"/>
+<rectangle x1="1.655" y1="-5.3" x2="2.155" y2="-3.75" layer="51"/>
+<rectangle x1="1.655" y1="3.75" x2="2.155" y2="5.3" layer="51"/>
+<rectangle x1="0.385" y1="3.75" x2="0.885" y2="5.3" layer="51"/>
+<rectangle x1="-0.885" y1="3.75" x2="-0.385" y2="5.3" layer="51"/>
+<rectangle x1="-2.155" y1="3.75" x2="-1.655" y2="5.3" layer="51"/>
+<rectangle x1="-2.15" y1="-3.1" x2="-1.66" y2="-2" layer="51"/>
+<rectangle x1="-0.88" y1="-3.1" x2="-0.39" y2="-2" layer="51"/>
+<rectangle x1="0.39" y1="-3.1" x2="0.88" y2="-2" layer="51"/>
+<rectangle x1="1.66" y1="-3.1" x2="2.15" y2="-2" layer="51"/>
+<rectangle x1="1.66" y1="2" x2="2.15" y2="3.1" layer="51"/>
+<rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
+<rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
+<rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
+</package>
+</packages>
+<symbols>
+<symbol name="DS1307">
+<wire x1="-7.62" y1="10.16" x2="10.16" y2="10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="10.16" x2="10.16" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-10.16" x2="-7.62" y2="-10.16" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-10.16" x2="-7.62" y2="10.16" width="0.254" layer="94"/>
+<text x="-7.62" y="11.43" size="1.778" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="VBAT" x="12.7" y="-7.62" length="short" direction="pas" rot="R180"/>
+<pin name="SDA" x="12.7" y="2.54" length="short" rot="R180"/>
+<pin name="SCL" x="12.7" y="7.62" length="short" direction="in" rot="R180"/>
+<pin name="SQW" x="12.7" y="-2.54" length="short" direction="oc" rot="R180"/>
+<pin name="X1" x="-10.16" y="2.54" length="short" direction="in"/>
+<pin name="X2" x="-10.16" y="-2.54" length="short" direction="out"/>
+<pin name="GND" x="-10.16" y="-7.62" length="short" direction="pwr"/>
+<pin name="VCC" x="-10.16" y="7.62" length="short" direction="pwr"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="DS1307" prefix="IC">
+<description>I2C-Bus &lt;b&gt;CLOCK/CALENDAR&lt;/b&gt;</description>
+<gates>
+<gate name="G$1" symbol="DS1307" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="DIL08">
+<connects>
+<connect gate="G$1" pin="GND" pad="4"/>
+<connect gate="G$1" pin="SCL" pad="6"/>
+<connect gate="G$1" pin="SDA" pad="5"/>
+<connect gate="G$1" pin="SQW" pad="7"/>
+<connect gate="G$1" pin="VBAT" pad="3"/>
+<connect gate="G$1" pin="VCC" pad="8"/>
+<connect gate="G$1" pin="X1" pad="1"/>
+<connect gate="G$1" pin="X2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="Z" package="SOIC8">
+<connects>
+<connect gate="G$1" pin="GND" pad="4"/>
+<connect gate="G$1" pin="SCL" pad="6"/>
+<connect gate="G$1" pin="SDA" pad="5"/>
+<connect gate="G$1" pin="SQW" pad="7"/>
+<connect gate="G$1" pin="VBAT" pad="3"/>
+<connect gate="G$1" pin="VCC" pad="8"/>
+<connect gate="G$1" pin="X1" pad="1"/>
+<connect gate="G$1" pin="X2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="/PCF8583" package="SO8-7_5+SOIC8">
+<connects>
+<connect gate="G$1" pin="GND" pad="4"/>
+<connect gate="G$1" pin="SCL" pad="6"/>
+<connect gate="G$1" pin="SDA" pad="5"/>
+<connect gate="G$1" pin="SQW" pad="7"/>
+<connect gate="G$1" pin="VBAT" pad="3"/>
+<connect gate="G$1" pin="VCC" pad="8"/>
+<connect gate="G$1" pin="X1" pad="1"/>
+<connect gate="G$1" pin="X2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -908,7 +908,6 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 </class>
 </classes>
 <parts>
-<part name="DS1307" library="ds1307_pcf8583" deviceset="DS1307" device=""/>
 <part name="R1" library="SparkFun-Resistors" deviceset="10KOHM-1/10W-1%(0603)" device="0603" value="10K"/>
 <part name="R2" library="SparkFun-Resistors" deviceset="10KOHM-1/10W-1%(0603)" device="0603" value="10K"/>
 <part name="SCL_RTC" library="solpad" deviceset="SE13" device=""/>
@@ -920,13 +919,13 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 <part name="VDD3" library="supply1" deviceset="VDD" device=""/>
 <part name="VDD" library="solpad" deviceset="SE13" device=""/>
 <part name="Y1" library="SparkFun-FreqCtrl" deviceset="CRYSTAL" device="SMD"/>
+<part name="IC1" library="ds1307_pcf8583" deviceset="DS1307" device="Z"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="DS1307" gate="G$1" x="48.26" y="60.96"/>
 <instance part="R1" gate="G$1" x="63.5" y="76.2" rot="R90"/>
 <instance part="R2" gate="G$1" x="88.9" y="68.58" rot="R90"/>
 <instance part="SCL_RTC" gate="1" x="73.66" y="68.58" rot="R270"/>
@@ -938,66 +937,68 @@ This is the "EZ" version, which has limited top masking for improved ease of ass
 <instance part="VDD3" gate="G$1" x="88.9" y="76.2"/>
 <instance part="VDD" gate="1" x="35.56" y="71.12"/>
 <instance part="Y1" gate="G$1" x="22.86" y="60.96" rot="R90"/>
+<instance part="IC1" gate="G$1" x="48.26" y="60.96"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="N$1" class="0">
 <segment>
-<pinref part="DS1307" gate="G$1" pin="SCL"/>
 <wire x1="60.96" y1="68.58" x2="63.5" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="SCL_RTC" gate="1" pin="MP"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="63.5" y1="68.58" x2="71.12" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="71.12" x2="63.5" y2="68.58" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="SCL"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="DS1307" gate="G$1" pin="SDA"/>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="60.96" y1="63.5" x2="88.9" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="88.9" y1="63.5" x2="86.36" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="SDA_RTC" gate="1" pin="MP"/>
 <wire x1="93.98" y1="63.5" x2="88.9" y2="63.5" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="SDA"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="DS1307" gate="G$1" pin="X2"/>
 <wire x1="22.86" y1="58.42" x2="38.1" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="Y1" gate="G$1" pin="1"/>
+<pinref part="IC1" gate="G$1" pin="X2"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="DS1307" gate="G$1" pin="X1"/>
 <wire x1="38.1" y1="63.5" x2="22.86" y2="63.5" width="0.1524" layer="91"/>
 <pinref part="Y1" gate="G$1" pin="2"/>
+<pinref part="IC1" gate="G$1" pin="X1"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="DS1307" gate="G$1" pin="GND"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="35.56" y1="53.34" x2="38.1" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="DS1307" gate="G$1" pin="VBAT"/>
 <wire x1="63.5" y1="53.34" x2="60.96" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="38.1" y1="45.72" x2="63.5" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="45.72" x2="63.5" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="63.5" y1="53.34" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="GND" gate="1" pin="MP"/>
 <wire x1="38.1" y1="45.72" x2="38.1" y2="53.34" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="G$1" pin="VBAT"/>
+<pinref part="IC1" gate="G$1" pin="GND"/>
+<junction x="38.1" y="53.34"/>
 </segment>
 </net>
 <net name="VDD" class="0">
 <segment>
-<pinref part="DS1307" gate="G$1" pin="VCC"/>
 <wire x1="33.02" y1="68.58" x2="35.56" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="VDD1" gate="G$1" pin="VDD"/>
 <pinref part="VDD" gate="1" pin="MP"/>
 <wire x1="35.56" y1="68.58" x2="38.1" y2="68.58" width="0.1524" layer="91"/>
 <junction x="35.56" y="68.58"/>
+<pinref part="IC1" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>

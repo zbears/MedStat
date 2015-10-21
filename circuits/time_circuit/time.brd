@@ -134,39 +134,12 @@
 </layers>
 <board>
 <plain>
-<wire x1="39.37" y1="29.21" x2="68.25" y2="29.21" width="0" layer="20"/>
-<wire x1="68.25" y1="29.21" x2="68.25" y2="67.3" width="0" layer="20"/>
-<wire x1="68.25" y1="67.3" x2="39.37" y2="67.3" width="0" layer="20"/>
-<wire x1="39.37" y1="67.3" x2="39.37" y2="29.21" width="0" layer="20"/>
+<wire x1="39.37" y1="36.83" x2="58.09" y2="36.83" width="0" layer="20"/>
+<wire x1="58.09" y1="36.83" x2="58.09" y2="62.22" width="0" layer="20"/>
+<wire x1="58.09" y1="62.22" x2="39.37" y2="62.22" width="0" layer="20"/>
+<wire x1="39.37" y1="62.22" x2="39.37" y2="36.83" width="0" layer="20"/>
 </plain>
 <libraries>
-<library name="ds1307_pcf8583">
-<description>&lt;b&gt;DS1307: 64 x 8 Serial Real-Time Clock&lt;br&gt;
-PCF8583: Clock/calendar with 240 x 8-bit RAM&lt;/b&gt;
-&lt;p&gt;Each device has a surface-mount variant with enlarged pads to accomodate both SOIC8 and 7.5mm wide SO8. It allows to interchangeably use DS1307 and PCF8583, as they are almost pin-compatible. The only exception is pin 3, which should be tied to battery anode for DS1307 or to Vdd/Vss for PCF8583 - this can be selected by a two-way SMD solder jumper (added as a separate part).&lt;/p&gt;
-&lt;p&gt;&lt;b&gt;Do NOT use for automatic production! Doublecheck before using!&lt;/b&gt;&lt;/p&gt;</description>
-<packages>
-<package name="DIL08">
-<description>&lt;b&gt;Dual In Line&lt;/b&gt;</description>
-<wire x1="-5.08" y1="-0.635" x2="-5.08" y2="0.635" width="0.1524" layer="21" curve="180"/>
-<wire x1="-5.08" y1="-0.635" x2="-5.08" y2="-2.794" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="-2.794" x2="5.08" y2="-2.794" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="-2.794" x2="5.08" y2="2.794" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="2.794" x2="-5.08" y2="2.794" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="2.794" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
-<pad name="1" x="-3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="2" x="-1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="3" x="1.27" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="4" x="3.81" y="-3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="5" x="3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="6" x="1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="7" x="-1.27" y="3.81" drill="0.8128" shape="long" rot="R90"/>
-<pad name="8" x="-3.81" y="3.81" drill="0.8128" shape="long" rot="R90"/>
-<text x="-5.4864" y="-2.921" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="6.5786" y="-2.921" size="1.27" layer="27" ratio="10" rot="R90">&gt;VALUE</text>
-</package>
-</packages>
-</library>
 <library name="solpad">
 <description>&lt;b&gt;Solder Pads/Test Points&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -279,6 +252,42 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-5.715" y="2.794" size="1.27" layer="25" ratio="10">&gt;NAME</text>
 <text x="-5.715" y="-4.191" size="1.27" layer="27" ratio="10">&gt;VALUE</text>
 <rectangle x1="-6.604" y1="-3.048" x2="6.604" y2="3.048" layer="43"/>
+</package>
+</packages>
+</library>
+<library name="ds1307_pcf8583">
+<description>&lt;b&gt;DS1307: 64 x 8 Serial Real-Time Clock&lt;br&gt;
+PCF8583: Clock/calendar with 240 x 8-bit RAM&lt;/b&gt;
+&lt;p&gt;Each device has a surface-mount variant with enlarged pads to accomodate both SOIC8 and 7.5mm wide SO8. It allows to interchangeably use DS1307 and PCF8583, as they are almost pin-compatible. The only exception is pin 3, which should be tied to battery anode for DS1307 or to Vdd/Vss for PCF8583 - this can be selected by a two-way SMD solder jumper (added as a separate part).&lt;/p&gt;
+&lt;p&gt;&lt;b&gt;Do NOT use for automatic production! Doublecheck before using!&lt;/b&gt;&lt;/p&gt;</description>
+<packages>
+<package name="SOIC8">
+<description>&lt;b&gt;Small Outline IC&lt;/b&gt;</description>
+<wire x1="2.4" y1="1.9" x2="2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.9" x2="-2.4" y2="-1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.9" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="-1.4" x2="-2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="-2.4" y1="1.9" x2="2.4" y2="1.9" width="0.2032" layer="51"/>
+<wire x1="2.4" y1="-1.4" x2="-2.4" y2="-1.4" width="0.2032" layer="51"/>
+<smd name="2" x="-0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="7" x="-0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="1" x="-1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="3" x="0.635" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="4" x="1.905" y="-2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="8" x="-1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="6" x="0.635" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<smd name="5" x="1.905" y="2.6" dx="0.6" dy="2.2" layer="1"/>
+<text x="-2.667" y="-1.905" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+<text x="3.937" y="-1.905" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
+<rectangle x1="-2.15" y1="-3.1" x2="-1.66" y2="-2" layer="51"/>
+<rectangle x1="-0.88" y1="-3.1" x2="-0.39" y2="-2" layer="51"/>
+<rectangle x1="0.39" y1="-3.1" x2="0.88" y2="-2" layer="51"/>
+<rectangle x1="1.66" y1="-3.1" x2="2.15" y2="-2" layer="51"/>
+<rectangle x1="1.66" y1="2" x2="2.15" y2="3.1" layer="51"/>
+<rectangle x1="0.39" y1="2" x2="0.88" y2="3.1" layer="51"/>
+<rectangle x1="-0.88" y1="2" x2="-0.39" y2="3.1" layer="51"/>
+<rectangle x1="-2.15" y1="2" x2="-1.66" y2="3.1" layer="51"/>
 </package>
 </packages>
 </library>
@@ -471,59 +480,86 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="DS1307" library="ds1307_pcf8583" package="DIL08" value="DS1307" x="50.8" y="48.26"/>
-<element name="GND" library="solpad" package="SE13" value="SE13" x="64.77" y="44.45"/>
-<element name="R1" library="SparkFun-Resistors" package="0603-RES" value="10K" x="45.72" y="58.42" rot="R180">
-<attribute name="PROD_ID" value="RES-00824" x="45.72" y="58.42" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="GND" library="solpad" package="SE13" value="SE13" x="52.07" y="46.99"/>
+<element name="R1" library="SparkFun-Resistors" package="0603-RES" value="10K" x="43.18" y="55.88" rot="R180">
+<attribute name="PROD_ID" value="RES-00824" x="43.18" y="55.88" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="R2" library="SparkFun-Resistors" package="0603-RES" value="10K" x="45.72" y="63.5" rot="R180">
-<attribute name="PROD_ID" value="RES-00824" x="45.72" y="63.5" size="1.778" layer="27" rot="R180" display="off"/>
+<element name="R2" library="SparkFun-Resistors" package="0603-RES" value="10K" x="43.18" y="58.42" rot="R180">
+<attribute name="PROD_ID" value="RES-00824" x="43.18" y="58.42" size="1.778" layer="27" rot="R180" display="off"/>
 </element>
-<element name="SCL_RTC" library="solpad" package="SE13" value="SE13" x="52.07" y="58.42"/>
-<element name="SDA_RTC" library="solpad" package="SE13" value="SE13" x="60.96" y="63.5"/>
+<element name="SCL_RTC" library="solpad" package="SE13" value="SE13" x="46.99" y="55.88"/>
+<element name="SDA_RTC" library="solpad" package="SE13" value="SE13" x="49.53" y="58.42"/>
 <element name="VDD" library="solpad" package="SE13" value="SE13" x="41.91" y="52.07"/>
-<element name="Y1" library="SparkFun-FreqCtrl" package="HC49UP" value="" x="49.53" y="35.56" rot="R180"/>
+<element name="Y1" library="SparkFun-FreqCtrl" package="HC49UP" value="" x="48.26" y="41.91" rot="R180"/>
+<element name="IC1" library="ds1307_pcf8583" package="SOIC8" value="DS1307Z" x="46.99" y="49.53"/>
 </elements>
 <signals>
 <signal name="N$1">
-<contactref element="DS1307" pad="6"/>
 <contactref element="SCL_RTC" pad="MP"/>
 <contactref element="R1" pad="1"/>
-<wire x1="46.57" y1="58.42" x2="52.07" y2="58.42" width="0" layer="19" extent="1-1"/>
-<wire x1="52.07" y1="52.07" x2="52.07" y2="58.42" width="0" layer="19" extent="1-1"/>
+<contactref element="IC1" pad="6"/>
+<wire x1="46.863" y1="56.007" x2="44.1198" y2="56.007" width="0.254" layer="1"/>
+<wire x1="44.1198" y1="56.007" x2="44.03" y2="55.88" width="0.254" layer="1"/>
+<wire x1="46.863" y1="56.007" x2="46.99" y2="55.88" width="0.254" layer="1"/>
+<wire x1="47.5488" y1="55.3212" x2="47.5488" y2="52.3494" width="0.254" layer="1"/>
+<wire x1="46.99" y1="55.88" x2="47.5488" y2="55.3212" width="0.254" layer="1"/>
+<wire x1="47.5488" y1="52.3494" x2="47.625" y2="52.13" width="0.254" layer="1"/>
 </signal>
 <signal name="N$2">
-<contactref element="DS1307" pad="5"/>
 <contactref element="R2" pad="1"/>
 <contactref element="SDA_RTC" pad="MP"/>
-<wire x1="60.96" y1="63.5" x2="54.61" y2="52.07" width="0" layer="19" extent="1-1"/>
-<wire x1="46.57" y1="63.5" x2="60.96" y2="63.5" width="0" layer="19" extent="1-1"/>
+<contactref element="IC1" pad="5"/>
+<wire x1="49.3776" y1="58.5216" x2="48.9204" y2="58.5216" width="0.254" layer="1"/>
+<wire x1="48.9204" y1="58.5216" x2="44.1198" y2="58.5216" width="0.254" layer="1"/>
+<wire x1="44.1198" y1="58.5216" x2="44.03" y2="58.42" width="0.254" layer="1"/>
+<wire x1="49.3776" y1="58.5216" x2="49.53" y2="58.42" width="0.254" layer="1"/>
+<wire x1="48.9204" y1="58.5216" x2="48.9204" y2="52.3494" width="0.254" layer="1"/>
+<wire x1="48.9204" y1="52.3494" x2="48.895" y2="52.13" width="0.254" layer="1"/>
+<wire x1="48.9204" y1="58.5216" x2="49.53" y2="58.42" width="0.254" layer="1"/>
 </signal>
 <signal name="N$3">
-<contactref element="DS1307" pad="2"/>
 <contactref element="Y1" pad="1"/>
-<wire x1="54.356" y1="35.56" x2="49.53" y2="44.45" width="0" layer="19" extent="1-1"/>
+<contactref element="IC1" pad="2"/>
+<wire x1="46.4058" y1="46.1772" x2="46.4058" y2="46.863" width="0.254" layer="1"/>
+<wire x1="50.5206" y1="42.0624" x2="46.4058" y2="46.1772" width="0.254" layer="1"/>
+<wire x1="53.0352" y1="42.0624" x2="50.5206" y2="42.0624" width="0.254" layer="1"/>
+<wire x1="46.4058" y1="46.863" x2="46.355" y2="46.93" width="0.254" layer="1"/>
+<wire x1="53.0352" y1="42.0624" x2="53.086" y2="41.91" width="0.254" layer="1"/>
 </signal>
 <signal name="N$4">
-<contactref element="DS1307" pad="1"/>
 <contactref element="Y1" pad="2"/>
-<wire x1="44.704" y1="35.56" x2="46.99" y2="44.45" width="0" layer="19" extent="1-1"/>
+<contactref element="IC1" pad="1"/>
+<wire x1="45.0342" y1="43.6626" x2="45.0342" y2="46.863" width="0.254" layer="1"/>
+<wire x1="43.434" y1="42.0624" x2="45.0342" y2="43.6626" width="0.254" layer="1"/>
+<wire x1="45.0342" y1="46.863" x2="45.085" y2="46.93" width="0.254" layer="1"/>
+<wire x1="43.434" y1="42.0624" x2="43.434" y2="41.91" width="0.254" layer="1"/>
 </signal>
 <signal name="GND">
-<contactref element="DS1307" pad="4"/>
-<contactref element="DS1307" pad="3"/>
 <contactref element="GND" pad="MP"/>
-<wire x1="54.61" y1="44.45" x2="64.77" y2="44.45" width="0" layer="19" extent="1-1"/>
-<wire x1="52.07" y1="44.45" x2="54.61" y2="44.45" width="0" layer="19" extent="1-1"/>
+<contactref element="IC1" pad="4"/>
+<contactref element="IC1" pad="3"/>
+<wire x1="48.6918" y1="47.0916" x2="47.7774" y2="47.0916" width="0.254" layer="1"/>
+<wire x1="47.7774" y1="47.0916" x2="47.625" y2="46.93" width="0.254" layer="1"/>
+<wire x1="48.6918" y1="47.0916" x2="48.895" y2="46.93" width="0.254" layer="1"/>
+<wire x1="51.8922" y1="47.0916" x2="48.9204" y2="47.0916" width="0.254" layer="1"/>
+<wire x1="48.9204" y1="47.0916" x2="48.895" y2="46.93" width="0.254" layer="1"/>
+<wire x1="51.8922" y1="47.0916" x2="52.07" y2="46.99" width="0.254" layer="1"/>
 </signal>
 <signal name="VDD">
-<contactref element="DS1307" pad="8"/>
 <contactref element="R1" pad="2"/>
 <contactref element="R2" pad="2"/>
 <contactref element="VDD" pad="MP"/>
-<wire x1="44.87" y1="58.42" x2="44.87" y2="63.5" width="0" layer="19" extent="1-1"/>
-<wire x1="46.99" y1="52.07" x2="44.87" y2="58.42" width="0" layer="19" extent="1-1"/>
-<wire x1="41.91" y1="52.07" x2="46.99" y2="52.07" width="0" layer="19" extent="1-1"/>
+<contactref element="IC1" pad="8"/>
+<wire x1="42.291" y1="58.293" x2="42.291" y2="56.007" width="0.254" layer="1"/>
+<wire x1="42.291" y1="56.007" x2="42.33" y2="55.88" width="0.254" layer="1"/>
+<wire x1="42.291" y1="58.293" x2="42.33" y2="58.42" width="0.254" layer="1"/>
+<wire x1="42.291" y1="52.3494" x2="42.291" y2="55.7784" width="0.254" layer="1"/>
+<wire x1="42.0624" y1="52.1208" x2="42.291" y2="52.3494" width="0.254" layer="1"/>
+<wire x1="42.291" y1="55.7784" x2="42.33" y2="55.88" width="0.254" layer="1"/>
+<wire x1="42.0624" y1="52.1208" x2="41.91" y2="52.07" width="0.254" layer="1"/>
+<wire x1="42.291" y1="52.3494" x2="45.0342" y2="52.3494" width="0.254" layer="1"/>
+<wire x1="45.0342" y1="52.3494" x2="45.085" y2="52.13" width="0.254" layer="1"/>
+<wire x1="42.291" y1="52.3494" x2="41.91" y2="52.07" width="0.254" layer="1"/>
 </signal>
 </signals>
 <errors>
