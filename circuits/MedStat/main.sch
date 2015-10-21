@@ -1894,6 +1894,10 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND18" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND19" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="VDD" library="solpad" deviceset="LSP10" device=""/>
+<part name="SCL_RTC" library="solpad" deviceset="LSP10" device=""/>
+<part name="SDA_RTC" library="solpad" deviceset="LSP10" device=""/>
+<part name="GND" library="solpad" deviceset="LSP10" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1983,6 +1987,11 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <text x="55.88" y="-7.62" size="1.778" layer="91">RESET</text>
 <text x="55.88" y="-45.72" size="1.778" layer="91">EPD DISCHARGE</text>
 <text x="55.88" y="-68.58" size="1.778" layer="91">POWER SWITCH</text>
+<wire x1="129.54" y1="96.52" x2="86.36" y2="96.52" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="129.54" y1="60.96" x2="129.54" y2="96.52" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="86.36" y1="96.52" x2="86.36" y2="60.96" width="0.2032" layer="97" style="shortdash"/>
+<wire x1="86.36" y1="60.96" x2="129.54" y2="60.96" width="0.2032" layer="97" style="shortdash"/>
+<text x="86.36" y="99.06" size="1.778" layer="97">TIME CIRCUIT</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="0" y="0"/>
@@ -2088,11 +2097,15 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <instance part="GND17" gate="1" x="137.16" y="-35.56"/>
 <instance part="GND18" gate="1" x="243.84" y="-12.7" rot="R270"/>
 <instance part="GND19" gate="1" x="241.3" y="2.54" rot="R270"/>
+<instance part="VDD" gate="1" x="91.44" y="88.9"/>
+<instance part="SCL_RTC" gate="1" x="99.06" y="88.9"/>
+<instance part="SDA_RTC" gate="1" x="111.76" y="88.9"/>
+<instance part="GND" gate="1" x="124.46" y="88.9"/>
 </instances>
 <busses>
 </busses>
 <nets>
-<net name="GND" class="0">
+<net name="SCL_RTC" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="GND"/>
 <wire x1="-20.32" y1="25.4" x2="-22.86" y2="25.4" width="0.2032" layer="91"/>
@@ -2168,6 +2181,9 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <pinref part="LSP9" gate="1" pin="MP"/>
 <wire x1="45.72" y1="86.36" x2="45.72" y2="63.5" width="0.2032" layer="91"/>
 <label x="43.18" y="71.12" size="1.778" layer="95" rot="R90"/>
+<label x="121.92" y="73.66" size="1.778" layer="95" rot="R90"/>
+<label x="109.22" y="73.66" size="1.778" layer="95" rot="R90"/>
+<label x="96.52" y="73.66" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="D1" gate="1" pin="C"/>
@@ -2305,6 +2321,7 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <pinref part="LSP8" gate="1" pin="MP"/>
 <wire x1="38.1" y1="86.36" x2="38.1" y2="63.5" width="0.2032" layer="91"/>
 <label x="35.56" y="71.12" size="1.778" layer="95" rot="R90"/>
+<label x="88.9" y="73.66" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="!LED_ENABLE" class="0">
@@ -2686,6 +2703,33 @@ diameter 5 mm, horizontal, grid 17 mm</description>
 <segment>
 <pinref part="PIN" gate="-2" pin="1"/>
 <wire x1="264.16" y1="5.08" x2="55.88" y2="5.08" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$48" class="0">
+<segment>
+<pinref part="VDD" gate="1" pin="MP"/>
+<wire x1="91.44" y1="86.36" x2="91.44" y2="66.04" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$49" class="0">
+<segment>
+<pinref part="SCL_RTC" gate="1" pin="MP"/>
+<wire x1="99.06" y1="86.36" x2="99.06" y2="66.04" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$50" class="0">
+<segment>
+<pinref part="SDA_RTC" gate="1" pin="MP"/>
+<wire x1="111.76" y1="86.36" x2="111.76" y2="66.04" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<wire x1="124.46" y1="86.36" x2="124.46" y2="66.04" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$51" class="0">
+<segment>
+<pinref part="GND" gate="1" pin="MP"/>
+<wire x1="124.46" y1="86.36" x2="124.46" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
