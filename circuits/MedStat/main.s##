@@ -2643,8 +2643,8 @@ PCF8583: Clock/calendar with 240 x 8-bit RAM&lt;/b&gt;
 <part name="GND19" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="R4" library="SparkFun-Resistors" deviceset="10KOHM-1/10W-1%(0603)" device="0603" value="10K"/>
 <part name="R5" library="SparkFun-Resistors" deviceset="10KOHM-1/10W-1%(0603)" device="0603" value="10K"/>
-<part name="SCL" library="solpad" deviceset="SE13" device=""/>
-<part name="SDA" library="solpad" deviceset="SE13" device=""/>
+<part name="SCL_RTC" library="solpad" deviceset="SE13" device=""/>
+<part name="SDA_RTC" library="solpad" deviceset="SE13" device=""/>
 <part name="GND7" library="solpad" deviceset="SE13" device=""/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="VDD1" library="supply1" deviceset="VDD" device=""/>
@@ -2853,8 +2853,8 @@ PCF8583: Clock/calendar with 240 x 8-bit RAM&lt;/b&gt;
 <instance part="GND19" gate="1" x="241.3" y="2.54" rot="R270"/>
 <instance part="R4" gate="G$1" x="185.42" y="86.36" rot="R90"/>
 <instance part="R5" gate="G$1" x="210.82" y="78.74" rot="R90"/>
-<instance part="SCL" gate="1" x="195.58" y="78.74" rot="R270"/>
-<instance part="SDA" gate="1" x="218.44" y="73.66" rot="R270"/>
+<instance part="SCL_RTC" gate="1" x="195.58" y="78.74" rot="R270"/>
+<instance part="SDA_RTC" gate="1" x="218.44" y="73.66" rot="R270"/>
 <instance part="GND7" gate="1" x="190.5" y="63.5" rot="R270"/>
 <instance part="GND20" gate="1" x="154.94" y="63.5" rot="R270"/>
 <instance part="VDD1" gate="G$1" x="154.94" y="81.28"/>
@@ -3478,7 +3478,7 @@ PCF8583: Clock/calendar with 240 x 8-bit RAM&lt;/b&gt;
 <net name="N$52" class="0">
 <segment>
 <wire x1="182.88" y1="78.74" x2="185.42" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="SCL" gate="1" pin="MP"/>
+<pinref part="SCL_RTC" gate="1" pin="MP"/>
 <pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="185.42" y1="78.74" x2="193.04" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="185.42" y1="81.28" x2="185.42" y2="78.74" width="0.1524" layer="91"/>
@@ -3490,7 +3490,7 @@ PCF8583: Clock/calendar with 240 x 8-bit RAM&lt;/b&gt;
 <pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="182.88" y1="73.66" x2="210.82" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="210.82" y1="73.66" x2="208.28" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="SDA" gate="1" pin="MP"/>
+<pinref part="SDA_RTC" gate="1" pin="MP"/>
 <wire x1="215.9" y1="73.66" x2="210.82" y2="73.66" width="0.1524" layer="91"/>
 <pinref part="IC1" gate="G$1" pin="SDA"/>
 </segment>
