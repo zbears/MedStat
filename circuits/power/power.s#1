@@ -2410,7 +2410,7 @@ drill 1.0 mm</description>
 <label x="111.76" y="48.26" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="N$8" class="0">
+<net name="GND" class="0">
 <segment>
 <pinref part="LSP1" gate="1" pin="MP"/>
 <wire x1="83.82" y1="88.9" x2="83.82" y2="83.82" width="0.1524" layer="91"/>
