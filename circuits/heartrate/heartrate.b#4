@@ -137,12 +137,13 @@
 </layers>
 <board>
 <plain>
-<dimension x1="0" y1="0" x2="25" y2="0" x3="12.5" y3="-3.75" textsize="1.778" textratio="15" layer="20"/>
-<dimension x1="0" y1="0" x2="0" y2="13" x3="-3" y3="6.5" textsize="1.778" textratio="15" layer="20"/>
 <wire x1="0.1" y1="-0.87" x2="0.1" y2="16.12" width="0" layer="20"/>
 <wire x1="0.1" y1="16.12" x2="25" y2="16.12" width="0" layer="20"/>
 <wire x1="25" y1="16.12" x2="25" y2="-0.87" width="0" layer="20"/>
 <wire x1="25" y1="-0.87" x2="0.1" y2="-0.87" width="0" layer="20"/>
+<hole x="3.6" y="15" drill="1.5"/>
+<hole x="22.8" y="14" drill="1.5"/>
+<hole x="23.1" y="1.9" drill="1.5"/>
 </plain>
 <libraries>
 <library name="solpad">
@@ -245,8 +246,8 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <library name="MedStatCustom">
 <packages>
 <package name="DSAH3717">
-<smd name="GND" x="2.925" y="0" dx="1.5" dy="1" layer="1"/>
-<smd name="VDD" x="-2.925" y="0" dx="1.5" dy="1" layer="1"/>
+<smd name="G" x="2.925" y="0" dx="1.5" dy="1" layer="1"/>
+<smd name="V" x="-2.925" y="0" dx="1.5" dy="1" layer="1"/>
 <hole x="0" y="0" drill="2.25"/>
 <wire x1="-3.75" y1="-0.75" x2="-3.75" y2="0.75" width="0.127" layer="21"/>
 <wire x1="3.75" y1="0.75" x2="3.75" y2="-0.75" width="0.127" layer="21"/>
@@ -521,7 +522,7 @@ design rules under a new name.</description>
 </elements>
 <signals>
 <signal name="N$1">
-<contactref element="U$1" pad="GND"/>
+<contactref element="U$1" pad="G"/>
 <contactref element="R1" pad="1"/>
 <wire x1="10.287" y1="12.573" x2="10.287" y2="12.3444" width="0.254" layer="1"/>
 <wire x1="9.3726" y1="13.4874" x2="10.287" y2="12.573" width="0.254" layer="1"/>
@@ -536,8 +537,8 @@ design rules under a new name.</description>
 </signal>
 <signal name="VDD">
 <contactref element="C1" pad="1"/>
-<contactref element="U$1" pad="VDD"/>
-<contactref element="U$2" pad="VDD"/>
+<contactref element="U$1" pad="V"/>
+<contactref element="U$2" pad="V"/>
 <contactref element="U$3" pad="VCC"/>
 <contactref element="U$4" pad="VDD"/>
 <contactref element="R5" pad="2"/>
@@ -576,7 +577,7 @@ design rules under a new name.</description>
 </signal>
 <signal name="N$4">
 <contactref element="R2" pad="1"/>
-<contactref element="U$2" pad="GND"/>
+<contactref element="U$2" pad="G"/>
 <wire x1="18.0594" y1="9.3726" x2="20.574" y2="9.3726" width="0.254" layer="1"/>
 <wire x1="20.574" y1="9.3726" x2="20.775" y2="9.565" width="0.254" layer="1"/>
 <wire x1="18.0594" y1="9.3726" x2="18.005" y2="9.305" width="0.254" layer="1"/>
@@ -774,6 +775,15 @@ design rules under a new name.</description>
 <wire x1="2.286" y1="4.572" x2="4.572" y2="2.286" width="0.254" layer="1"/>
 <wire x1="8.6868" y1="3.429" x2="8.91" y2="3.48" width="0.254" layer="1"/>
 <wire x1="2.286" y1="4.572" x2="2.205" y2="4.59" width="0.254" layer="1"/>
+</signal>
+<signal name="GND">
+<polygon width="0.254" layer="16">
+<vertex x="-8.9" y="21"/>
+<vertex x="-8.9" y="-5"/>
+<vertex x="30.5" y="-5"/>
+<vertex x="30.5" y="22.5"/>
+<vertex x="-1.9" y="22.5"/>
+</polygon>
 </signal>
 </signals>
 </board>

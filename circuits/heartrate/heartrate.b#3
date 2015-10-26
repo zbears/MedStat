@@ -137,12 +137,13 @@
 </layers>
 <board>
 <plain>
-<dimension x1="0" y1="0" x2="25" y2="0" x3="12.5" y3="-3.75" textsize="1.778" textratio="15" layer="20"/>
-<dimension x1="0" y1="0" x2="0" y2="13" x3="-3" y3="6.5" textsize="1.778" textratio="15" layer="20"/>
 <wire x1="0.1" y1="-0.87" x2="0.1" y2="16.12" width="0" layer="20"/>
 <wire x1="0.1" y1="16.12" x2="25" y2="16.12" width="0" layer="20"/>
 <wire x1="25" y1="16.12" x2="25" y2="-0.87" width="0" layer="20"/>
 <wire x1="25" y1="-0.87" x2="0.1" y2="-0.87" width="0" layer="20"/>
+<hole x="3.6" y="15" drill="1.5"/>
+<hole x="22.8" y="14" drill="1.5"/>
+<hole x="23.1" y="1.9" drill="1.5"/>
 </plain>
 <libraries>
 <library name="solpad">
