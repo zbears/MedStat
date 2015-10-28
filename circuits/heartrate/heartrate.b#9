@@ -776,15 +776,6 @@ design rules under a new name.</description>
 <wire x1="8.6868" y1="3.429" x2="8.91" y2="3.48" width="0.254" layer="1"/>
 <wire x1="2.286" y1="4.572" x2="2.205" y2="4.59" width="0.254" layer="1"/>
 </signal>
-<signal name="GND">
-<polygon width="0.254" layer="16">
-<vertex x="-8.9" y="21"/>
-<vertex x="-8.9" y="-5"/>
-<vertex x="30.5" y="-5"/>
-<vertex x="30.5" y="22.5"/>
-<vertex x="-1.9" y="22.5"/>
-</polygon>
-</signal>
 </signals>
 </board>
 </drawing>

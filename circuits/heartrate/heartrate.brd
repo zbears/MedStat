@@ -470,10 +470,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="NAME" x="20.208" y="8.202" size="0.508" layer="25" rot="R270"/>
 </element>
 <element name="R1" library="standardparts" package="0402" value="715" x="11.702" y="8.13" smashed="yes" rot="R270">
-<attribute name="VALUE" x="10.686" y="9.146" size="0.4064" layer="27" font="vector" rot="R270"/>
+<attribute name="VALUE" x="11.428" y="9.416" size="0.4064" layer="27" font="vector"/>
 </element>
 <element name="R2" library="standardparts" package="0402" value="715" x="10.658" y="8.17" smashed="yes" rot="R270">
-<attribute name="VALUE" x="9.642" y="9.186" size="0.4064" layer="27" font="vector" rot="R270"/>
+<attribute name="VALUE" x="9.864" y="9.388" size="0.4064" layer="27" font="vector"/>
 </element>
 <element name="R3" library="standardparts" package="0402" value="12k" x="18.288" y="1.397" smashed="yes" rot="R90">
 <attribute name="VALUE" x="18.923" y="2.794" size="0.4064" layer="27" font="vector" rot="R180"/>
@@ -485,7 +485,7 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="VALUE" x="6.853" y="7.198" size="0.4064" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="R6" library="standardparts" package="0402" value="100k" x="15.275" y="9.5" smashed="yes" rot="R180">
-<attribute name="VALUE" x="12.989" y="9.754" size="0.4064" layer="27" font="vector" rot="R180"/>
+<attribute name="VALUE" x="14.259" y="9.5" size="0.4064" layer="27" font="vector" rot="R180"/>
 </element>
 <element name="R7" library="standardparts" package="0402" value="3.3M" x="19.134" y="8.488" smashed="yes" rot="R180">
 <attribute name="VALUE" x="20.15" y="9.504" size="0.4064" layer="27" font="vector" rot="R180"/>

@@ -499,7 +499,6 @@ Please make sure your boards conform to these design rules.</description>
 </element>
 <element name="U$3" library="MedStatCustom" package="APDS-9008" value="APDS-9008" x="10.642" y="4.89" rot="MR270"/>
 <element name="U$4" library="MedStatCustom" package="SOT23-5" value="MCP6001" x="16.324" y="5.096" smashed="yes" rot="R180">
-<attribute name="NAME" x="17.213" y="2.937" size="0.4064" layer="25" font="vector" rot="R180"/>
 <attribute name="VALUE" x="17.2765" y="5.2865" size="0.4064" layer="27" rot="R180"/>
 </element>
 <element name="U$5" library="GeekAmmo" package="SOT23-3" value="P-CHANNEL-MOSFET" x="5.2" y="4.81" rot="R270"/>
