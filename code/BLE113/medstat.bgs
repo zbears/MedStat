@@ -1,0 +1,102 @@
+#################################################################################################
+# This is the main BGScript file for the Medstat BLE113 module
+#################################################################################################
+
+##############################################################
+# Constants
+##############################################################
+const ACC_ADDR = $3a # The accelerometer I2C address (may have to be changed to $3B)
+
+##############################################################
+# Global Variables
+##############################################################
+dim connected #a boolean indicating whether the device is connected to bluetooth
+dim i2c_comm(2) # Buffer for i2c communication
+dim acceleration(3) # Current X,Y,Z acceleration values (8 bit)
+dim temp  # a generic temp variable value
+dim temp1 # another generic temp variable value
+dim temp_vec(3) # a generic temp variable vector
+
+###############################################################
+# Procedures
+###############################################################
+
+## Turns on the accelerometer
+procedure enable_accelerometer()
+	i2c_comm(0:1)=$2a #CTRL_REG1 address
+	i2c_comm(1:1)=3 # enable accelerometer, set fast mode
+	call hardware_i2c_write(ACC_ADDR,1,2,i2c_comm(0:2))
+end
+
+## Turns off the accelerometer
+procedure disable_accelerometer()
+	i2c_comm(0:1)=$2a #CTRL_REG1 address
+	i2c_comm(1:1)=2 # disable accelerometer, maintain fast mode
+	call hardware_i2c_write(ACC_ADDR,1,2,i2c_comm(0:2))
+end
+
+## Updates the acceleration variable with the abs value of x,y,z acceleration
+## and writes the new acceleration to the GATT table
+procedure update_acceleration()
+	i2c_comm(0:1)=1
+	call hardware_i2c_write($3A,0,1,i2c_comm(0:1)) # Set address to beginning X_val (addr auto increments)
+    call hardware_i2c_read($3A,1,3)(temp,temp1,acceleration(0)) # Read acceleration data
+	# Trim any acceleration values, if necessary
+	# X
+	acceleration(0:1) = acceleration(0:1)+$04
+	# Y
+	acceleration(1:1) = acceleration(1:1)-$02
+	# Z
+	acceleration(2:1) = acceleration(2:1)-$40
+	# Calculate the absolute values of the acceleration components
+	# X
+	if acceleration(0:1) >= $F0 then
+		acceleration(0:1) = (acceleration(0:1)^$FF)+1
+	end if
+	# Y
+	if acceleration(1:1) >= $F0 then
+		acceleration(1:1) = (acceleration(1:1)^$FF)+1
+	end if
+	# Z
+	if acceleration(2:1) >= $F0 then
+		acceleration(2:1) = (acceleration(2:1)^$FF)+1
+	end if
+
+	call attributes_write(c_accel_value,0,3,acceleration(0:3))
+end
+
+
+###############################################################
+# Event Handlers
+###############################################################
+
+## Handle system boot
+event system_boot(major ,minor ,patch ,build ,ll_version ,protocol_version ,hw )
+	# Set up bluetooth advertising
+	connected = 0
+	call gap_set_adv_parameters(32,48,7)
+	call gap_set_mode(gap_general_discoverable,gap_undirected_connectable)
+
+	# Calibrate and enable the accelerometer
+	call enable_accelerometer()
+
+	# Start a test timer at 100ms interval, handle 0, repeating
+	call hardware_set_soft_timer(3277,0,0)
+	
+	# Set bondable bluetooth mode
+	call sm_set_bondable_mode(1)
+end
+
+## Handle the test timer
+event hardware_soft_timer(handle)
+	if handle = 0 then
+		call update_acceleration()
+	end if
+end
+
+## Handle a device disconnect
+event connection_disconnected(handle,results)
+	# Connection disconnected, continue advertising
+	connected=0
+	call gap_set_mode(gap_general_discoverable,gap_undirected_connectable)
+end

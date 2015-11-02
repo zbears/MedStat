@@ -1,3 +1,5 @@
 c_device_name 3
 c_appearance 6
 c_port_status 10
+c_heartrate_value 14
+c_accel_value 18

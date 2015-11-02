@@ -7,7 +7,7 @@
       <characteristic uuid="2A00" id="c_device_name">
         <description>Device Name</description>
         <properties read="true" const="true" />
-        <value>MedStat</value>
+        <value>MedStat2</value>
       </characteristic>
       <!-- 2A01: org.bluetooth.characteristic.gap.appearance -->
       <characteristic uuid="2A01" id="c_appearance">
@@ -20,15 +20,31 @@
 
     <!-- custom service for Port output setting -->
     <service uuid="624e957f-cb42-4cd6-bacc-84aeb898f69b" advertise="true">
-        <description>Custom Output Setting Service</description>
+      <description>Custom Output Setting Service</description>
         
-        <!-- custom read/write characteristic for getting/setting I/O port status --> 
-        <characteristic uuid="df342b03-53f9-43b4-acb6-62a63ca0615a" id="c_port_status">
-            <description>IO Port Status</description>
-            <properties read="true" write="true" />
-            <value length="1"/>
-        </characteristic>
+      <!-- custom read/write characteristic for getting/setting I/O port status --> 
+      <characteristic uuid="df342b03-53f9-43b4-acb6-62a63ca0615a" id="c_port_status">
+          <description>IO Port Status</description>
+          <properties read="true" write="true" />
+          <value length="1"/>
+      </characteristic>
     </service>
 
+    <!-- custom service for sending the heartrate value -->
+    <service uuid="c0854170-d12a-46c0-b491-a6bff25b48a1" advertise="true">
+      <description>Heartrate sensor output</description>
+      <characteristic uuid="932a5eac-e2e2-4968-8ec0-92cac3c9f72b" id="c_heartrate_value">
+        <properties read="true" notify="true" />
+        <value length="2" />
+      </characteristic>
+    </service>
+
+    <service uuid="d0854170-d12a-46c0-b491-a6bff25b48a1" advertise="true">
+      <description>Accelerometer value output</description>
+      <characteristic uuid="e0854170-d12a-46c0-b491-a6bff25b48a1" id="c_accel_value">
+        <properties read="true" notify="true" />
+        <value length="3" />
+      </characteristic>
+    </service>
 
 </configuration>
