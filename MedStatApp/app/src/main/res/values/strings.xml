@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MedStatApp</string>
+
+    <string name="hello_world">Hello MedStat!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_graph">GraphActivity</string>
+    <string name="title_activity_simulate_log">SimulateLog</string>
+    <string name="title_activity_contact_editor">ContactEditor</string>
+</resources>
