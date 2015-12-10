@@ -42,7 +42,7 @@ const EMERGENCY_SECONDS_WAIT = 5 # Number of seconds to wait before sending an e
 
 # Buttons
 const BUTTON_PORT = 1 # The port of both buttons
-const BUTTON_1_MASK = $08 # The mask for button 1
+const BUTTON_1_MASK = $20 # The mask for button 1
 const BUTTON_2_MASK = $10 # The mask for button 2
 
 # Threshold Defaults
@@ -268,7 +268,7 @@ end
 # Send an emergency notification out to the Android app
 procedure send_emergency_broadcast()
 	if emergency_sent = FALSE then
-		call attributes_write(emergency_value,0,4,TRUE|(pulse_warning<<1)|(moisture_warning<<2))
+		call attributes_write(emergency_value,0,4,TRUE)
 		emergency_sent = TRUE
 	end if
 end

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration>
     <!-- 1800: org.bluetooth.service.generic_access -->
-    <service uuid="1800" id="s_generic_access">
+    <service uuid="20854170-d12a-46c0-b491-a6bff25b48a2" id="s_generic_access">
       <description>Generic Access</description>
        <!-- 2A00: org.bluetooth.characteristic.gap.device_name -->
       <characteristic uuid="2A00" id="c_device_name">
         <description>Device Name</description>
         <properties read="true" const="true" />
-        <value>MedStat2</value>
+        <value>Medstat 1</value>
       </characteristic>
       <!-- 2A01: org.bluetooth.characteristic.gap.appearance -->
       <characteristic uuid="2A01" id="c_appearance">
@@ -18,33 +18,74 @@
       </characteristic>
     </service>
 
-    <!-- custom service for Port output setting -->
-    <service uuid="624e957f-cb42-4cd6-bacc-84aeb898f69b" advertise="true">
-      <description>Custom Output Setting Service</description>
-        
-      <!-- custom read/write characteristic for getting/setting I/O port status --> 
-      <characteristic uuid="df342b03-53f9-43b4-acb6-62a63ca0615a" id="c_port_status">
-          <description>IO Port Status</description>
-          <properties read="true" write="true" />
-          <value length="1"/>
-      </characteristic>
-    </service>
-
     <!-- custom service for sending the heartrate value -->
-    <service uuid="c0854170-d12a-46c0-b491-a6bff25b48a1" advertise="true">
+    <service uuid="20354170-d12a-46c0-b491-a6bff25b48a1" advertise="true">
       <description>Heartrate sensor output</description>
       <characteristic uuid="932a5eac-e2e2-4968-8ec0-92cac3c9f72b" id="c_heartrate_value">
         <properties read="true" notify="true" />
-        <value length="2" />
+        <value length="4" />
       </characteristic>
     </service>
 
-    <service uuid="d0854170-d12a-46c0-b491-a6bff25b48a1" advertise="true">
-      <description>Accelerometer value output</description>
-      <characteristic uuid="e0854170-d12a-46c0-b491-a6bff25b48a1" id="c_accel_value">
-        <properties read="true" notify="true" />
-        <value length="3" />
+    <!-- custom service for moisture display -->
+    <service uuid="734e952f-cb42-4cd6-badc-a4abb8c8f69b" advertise="true">
+      <description>Moisture Sensor Value</description>
+      <!-- custom read/write characteristic for getting/setting I/O port status --> 
+      <characteristic uuid="ef342b13-5df9-43b4-acb6-62363ca0615a" id="moisture_value">
+          <description>Moisture Value</description>
+          <properties read="true" notify="true" />
+          <value length="4"/>
       </characteristic>
     </service>
 
+    <!-- custom service for heartrate threshold setting. First 2 bytes are low val, second 2 are high val -->
+    <service uuid="40f7da1f-8ea8-4c23-b658-9714a98ba737" advertise="true">
+      <description>Pulse Sensor Threshold</description>
+      <characteristic uuid="f748c401-d9fa-481d-b422-7095116057ea" id="pulse_threshold">
+          <description>Pulse Sensor Threshold</description>
+          <properties write="true" read="true" notify="true" />
+          <value length="4"/>
+      </characteristic>
+    </service>
+
+    <!-- custom service for moisture threshold setting. First 2 bytes are low val, second 2 are high val -->
+    <service uuid="9dc52d37-271b-4861-83ff-6f58504ce531" advertise="true">
+      <description>Moisture Sensor Threshold</description>
+      <characteristic uuid="646e5956-0679-40ce-ac3c-c827dec22551" id="moisture_threshold">
+          <description>Moisture Sensor Threshold</description>
+          <properties write="true" read="true" notify="true" />
+          <value length="4"/>
+      </characteristic>
+    </service>
+     <!-- custom service for setting seconds between samples -->
+    <service uuid="fc0ff1f4-86d5-49bd-82d5-96a3dd23fb19" advertise="true">
+      <description>Seconds Between Samples</description>
+      <characteristic uuid="fb894150-8bed-46f2-a3c3-73e5a3ea547c" id="seconds_bn_samples">
+          <description>Seconds Between Samples</description>
+          <properties read="true" notify="true" write="true" />
+          <value length="4"/>
+      </characteristic>
+    </service>
+
+    <!-- custom service for Port output setting -->
+    <service uuid="15be6536-9dc0-11e5-8994-feff819cdc9f" advertise="true">
+      <description>Sensing Enabled</description>
+      <!-- custom read/write characteristic for getting/setting I/O port status --> 
+      <characteristic uuid="21a3f60e-9dc0-11e5-8994-feff819cdc9f" id="sensing_enabled">
+          <description>Sensing Enabled</description>
+          <properties read="true" write="true" notify="true" />
+          <value length="4"/>
+      </characteristic>
+    </service>
+
+     <!-- custom service for emergency display -->
+    <service uuid="420d5cee-9dc7-11e5-8994-feff819cdc9f" advertise="true">
+      <description>Emergency</description>
+      <!-- custom read/write characteristic for getting/setting I/O port status --> 
+      <characteristic uuid="463bcb8e-9dc7-11e5-8994-feff819cdc9f" id="emergency_value">
+          <description>Emergency</description>
+          <properties read="true" notify="true" />
+          <value length="4"/>
+      </characteristic>
+    </service>
 </configuration>

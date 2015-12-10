@@ -1,0 +1,348 @@
+########################################################################################
+# BLE113 code for reading pulse rate
+#
+# Authors: Zach Bears & Joshua Miller
+########################################################################################
+
+##############################################################
+# Constants
+##############################################################
+const ACC_ADDR = $38 # The accelerometer I2C address (may have to be changed to $3B)
+const CYCLES_PER_SEC = 32768 # Number of clock cycles/second
+const SECONDS_PER_MINUTE = 60 # Number of seconds per minute
+
+const 1S_HANDLE=1 # The handle of the 1s timer
+
+########################################################################################
+# Declare variables
+########################################################################################
+dim led #define the led state
+dim connected # a boolean indicating whether the device is connected to bluetooth
+dim acc_comm(2) # Buffer for accelerometer i2c communication
+dim acceleration(3) # Current X,Y,Z acceleration values (8 bit)
+dim time(3) # Current hours, minutes, seconds of time in 24H format
+dim temp  # a generic temp variable value
+dim temp1 # another generic temp variable value
+dim sample_counter # used to determine pulse timing
+dim last_beat_time # used to find the IBI
+
+dim thresh  # used to find the instant moment of the heart beat
+dim IBI # time in between beats
+dim pulse # boolean pulse flag
+
+dim second_beat # boolean flag for the second beat
+dim first_beat # boolean flag for the first beat
+dim fetching_bpm # boolean flag for recording the heart rate
+
+dim index # index for first for loop
+dim other_index # index for second for loop
+
+dim rate(40) # array of rates
+dim scaled_values(40) # array of scaled values
+dim scaled_values_index
+dim scaled_values_sum
+dim running_total # sum of array of rates
+
+dim BPM # current BPM
+dim amp # current wave amplitude
+dim scaled_value # scaled adc reading value 
+dim onesec # time for a second in milliseconds
+
+dim low_heart_rate_threshold
+dim high_heart_rate_threshold
+dim low_moisture_threshold
+dim high_moisture_threshold
+
+dim N
+
+dim tester
+
+dim delta_x
+dim delta_y
+dim delta_z
+
+dim prev_x
+dim prev_y
+dim prev_z
+
+dim led_toggle
+dim beat_count
+dim beat_count_pause
+
+dim average_of_ten
+dim average_of_ten_count
+
+dim emergency_detected
+dim led_write_value
+
+dim button_1
+dim button_2
+dim data
+dim port
+dim res
+
+dim five_second_emergency_counter
+
+dim moisture
+dim heart_rate
+
+
+########################################################################################
+# Accelerometer Code
+########################################################################################
+
+## Turns on the accelerometer
+procedure enable_accelerometer()
+	acc_comm(0:1)=$2a #CTRL_REG1 address
+	acc_comm(1:1)=3 # enable accelerometer, set fast mode
+	call hardware_i2c_write(ACC_ADDR,1,2,acc_comm(0:2))
+end
+
+## Turns off the accelerometer
+procedure disable_accelerometer()
+	acc_comm(0:1)=$2a #CTRL_REG1 address
+	acc_comm(1:1)=2 # disable accelerometer, maintain fast mode
+	call hardware_i2c_write(ACC_ADDR,1,2,acc_comm(0:2))
+end
+
+## Updates the acceleration variable with the abs value of x,y,z acceleration
+## and writes the new acceleration to the GATT table
+procedure update_acceleration()
+	acc_comm(0:1)=1
+
+	call hardware_i2c_write(ACC_ADDR,0,1,acc_comm(0:1)) # Set address to beginning X_val (addr auto increments)
+    call hardware_i2c_read(ACC_ADDR,1,3)(temp,temp1,acceleration(0)) # Read acceleration data
+
+	# Calculate the absolute values of the acceleration components
+
+	# X
+	if acceleration(0:1) >= $F0 then
+		acceleration(0:1) = (acceleration(0:1)^$FF)+1
+	end if
+	# Y
+	if acceleration(1:1) >= $F0 then
+		acceleration(1:1) = (acceleration(1:1)^$FF)+1
+	end if
+	# Z
+	if acceleration(2:1) >= $F0 then
+		acceleration(2:1) = (acceleration(2:1)^$FF)+1
+	end if
+
+	if  acceleration(0:1) > prev_x then
+		delta_x = acceleration(0:1) - prev_x
+	else
+		delta_x = prev_x - acceleration(0:1)
+	end if
+
+	if  acceleration(1:2) > prev_y then
+		delta_y = acceleration(1:2) - prev_y
+	else
+		delta_y = prev_y - acceleration(1:2)
+	end if
+
+	if  acceleration(2:3) > prev_z then
+		delta_z = acceleration(2:3) - prev_z
+	else
+		delta_z = prev_z - acceleration(2:3)
+	end if
+
+	prev_x = acceleration(0:1)
+	prev_y = acceleration(1:2)
+	prev_z = acceleration(2:3)
+
+	call attributes_write(x_accel_value,0,3, delta_x)
+	call attributes_write(y_accel_value,0,3, delta_y)
+	call attributes_write(z_accel_value,0,3, delta_z)
+end
+
+########################################################################################
+# Reads, Writes, and Interrupts
+########################################################################################
+# handle the case of a bluetooth device disconnecting
+event connection_disconnected(handle,result)
+	call gap_set_mode(gap_general_discoverable,gap_undirected_connectable)
+	connected = 0
+end
+
+# Listen for GATT write events
+event attributes_value(connection, reason, handle, offset, value_len, value)
+	if value(0:1) = 1 then
+		# Write 1 to port 0, pin 1 (variables are 2 due to a bitmasking)
+		#call hardware_io_port_write(0,2,2)
+	else
+		# Turn off the LED on P0_1
+		# call hardware_io_port_write(0,2,0)
+	end if
+end
+
+# Create a connection event listener
+event connection_status(connection,flags,address,address_type,conn_interval,timeout,latency,bonding)
+	connected = 1
+end
+
+# Handle the heartrate check timer expiration
+event hardware_soft_timer(handle)
+	if handle = 2 then
+		if delta_x < 1000 && delta_z < 1000 then
+			call hardware_adc_read(0,2,2)
+		end if
+	end if
+
+	if handle = 3 then
+		five_second_emergency_counter = five_second_emergency_counter + 1
+		if led_write_value = 0 then
+			call hardware_io_port_write(2,$2,$0)
+			led_write_value = 1
+		else
+			call hardware_io_port_write(2,$2,$2)
+			led_write_value = 0
+		end if
+
+		call hardware_io_port_read(1,$20)(res, port, data)
+
+		if data > 0 then
+			emergency_detected = 0
+			call hardware_io_port_write(2,$2,$2)
+			data = 0
+			five_second_emergency_counter = 0
+			return
+		end if
+
+		call hardware_set_soft_timer(30000,3,1)
+		if five_second_emergency_counter = 12 then
+			call attributes_write(emergency_value,0,3, $FF)
+		end if
+	end if
+end
+
+########################################################################################
+# Handle the ADC read
+########################################################################################
+event hardware_adc_result(input,value)
+
+	# Check if its a moisture value being recieved
+	if input = 1 then
+		call attributes_write(moisture_value,0,3, value)
+		if value > 2000 then
+			emergency_detected = 1
+			call hardware_set_soft_timer(30000,3,1)
+		end if
+		return
+	end if
+
+	# Listen for reset button
+	call hardware_io_port_read(1,$20)(res, port, data)
+
+	if data > 0 then
+		call hardware_io_port_write(2,$2,$2)
+		call attributes_write(emergency_value,0,3, $00)
+	end if
+
+	scaled_values_index = scaled_values_index + 1
+	# The values are 16 bit MSB - shift by 5 to get the bottom 10
+	scaled_value = value >> 5
+	scaled_values_sum = scaled_values_sum + scaled_value
+
+	# Keep track of the time in mS
+	sample_counter = sample_counter + 2
+
+	# Write the BPM into the GATTheartrate value 
+	if scaled_values_index = 9 then
+		scaled_values_sum = scaled_values_sum/10
+		beat_count_pause = beat_count_pause - 1
+		if scaled_values_sum > 500 && beat_count_pause <= 0 then
+			beat_count = beat_count+1
+			beat_count_pause = 10
+			N = sample_counter - last_beat_time
+			last_beat_time = sample_counter
+			average_of_ten = average_of_ten + N
+			average_of_ten_count = average_of_ten_count + 1
+			if 30000/N < 120 && 30000/N > 50 then
+				call attributes_write(c_heartrate_value,0,4, 30000/N)
+			end if
+			call enable_accelerometer()
+			call update_acceleration()
+			call disable_accelerometer()
+			call hardware_adc_read(1,2,2)
+		end if
+
+		scaled_values_index = 0
+		scaled_values_sum = 0
+	end if
+
+end
+
+
+
+########################################################################################
+# Declare variables to initial values; initialize timers
+########################################################################################
+event system_boot(major ,minor ,patch ,build ,ll_version ,protocol_version ,hw )
+	
+	# Device is not connected yet
+	connected = 0
+	
+	# Initialize Sample Counter to 0
+	sample_counter = 0
+	
+	# Initialize the indices to 0
+	index = 0
+	other_index = 0
+	
+	# Initialize beat times
+	last_beat_time = 0
+	
+	# Initialize the amplitude of the wave
+	amp = 100
+	
+	# Initialize the beat booleans
+	first_beat = 1
+	second_beat = 0
+	
+	# Initialize the pulse boolean
+	pulse = 0
+	
+	# Initialize IBI
+	IBI = 600
+	
+	# Initialize BPM
+	BPM = 80
+	
+	# Initialize Scaled Value
+	scaled_value = 0
+	
+	# Set length of second
+	onesec = 60000
+	
+	# Declare heart rate
+	low_heart_rate_threshold = 50
+	high_heart_rate_threshold = 80
+	
+	# Declare moisture level
+	low_moisture_threshold = 0
+	high_moisture_threshold = 15000
+
+	# Set advertisement interval to 20-30ms using all channels
+	call gap_set_adv_parameters(32,48,7)
+	
+	#set to advertising mode for bluetooth
+	call gap_set_mode(gap_general_discoverable,gap_undirected_connectable)
+
+	#set bondable mode
+	call sm_set_bondable_mode(1)
+
+	#set the notification LED pin to output mode
+	call hardware_io_port_config_direction(2,$2)
+
+	#set a 1 second repeating timer
+	call hardware_set_soft_timer
+	
+	#call hardware_set_soft_timer(30000,1,0)
+
+	# Create a heartbeat sensing timer every 2 ms
+	#call hardware_set_soft_timer(64,2,0)
+
+	
+end
+
+

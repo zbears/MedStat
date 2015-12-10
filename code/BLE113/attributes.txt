@@ -1,5 +1,9 @@
 c_device_name 3
 c_appearance 6
-c_port_status 10
-c_heartrate_value 14
-c_accel_value 18
+c_heartrate_value 10
+moisture_value 14
+pulse_threshold 19
+moisture_threshold 24
+seconds_bn_samples 29
+sensing_enabled 34
+emergency_value 39
